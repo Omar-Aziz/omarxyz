@@ -11,10 +11,11 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "@nuxtjs/axios": "^5.3.6",
+    "@nuxtjs/vuetify": "0.5.5",
     "cross-env": "^5.2.0",
     "express": "^4.16.4",
-    "@nuxtjs/vuetify": "0.5.5",
-    "@nuxtjs/axios": "^5.3.6",
+    "nodemailer": "^6.2.1",
     "nuxt": "^2.0.0"
   },
   "devDependencies": {
