@@ -93,14 +93,14 @@ export default {
 .frameDiv {
   /* left: -10px; */
   width: 343px;
-  height: 110px;
+  height: 95px;
   overflow: hidden;
   position: relative;
 }
 
 .frame {
   position: absolute;
-  top: -400px;
+  top: -410px;
   left: -105px;
   width: 550px;
   height: 1100px;
