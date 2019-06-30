@@ -45,7 +45,7 @@
           >
             <v-card-text class="font-weight-regular">LIVE TWITTER FOLLOWERS COUNT</v-card-text>
             <div class="frameDiv">
-              <iframe class="frame" src="https://livecounts.net/twitter/andrewyang"></iframe>
+              <iframe class="frame" :src="url.count"></iframe>
             </div>
             <v-btn flat :href="url.twitter" target="_blank" color="blue">Twitter</v-btn>
           </v-card>
@@ -67,7 +67,8 @@ export default {
       url: {
         twitter: "https://twitter.com/AndrewYang",
         donate:
-          "https://secure.actblue.com/donate/ayorganicdebatejune19190627genall?utm_source=website&utm_medium=Organic&utm_campaign=DebateJune19&utm_term=&utm_content=190627ButtonTopNav&refcode=DebateJune19190627ButtonTopNav"
+          "https://secure.actblue.com/donate/ayorganicdebatejune19190627genall?utm_source=website&utm_medium=Organic&utm_campaign=DebateJune19&utm_term=&utm_content=190627ButtonTopNav&refcode=DebateJune19190627ButtonTopNav",
+        count: "https://livecounts.net/twitter/andrewyang"
       },
       card_text: `"I’m not a career politician—I’m an entrepreneur who understands the economy.
       It’s clear to me, and to many of the nation’s best job creators, that we need to make an
@@ -79,14 +80,6 @@ export default {
     };
   }
 };
-
-// var delayInMilliseconds = 500;
-
-// setTimeout(function() {
-//   var iframe = document.getElementsByTagName("iframe")[0];
-//   iframe.style.background = "#fff";
-//   iframe.contentWindow.document.body.style.backgroundColor = "#fff";
-// }, delayInMilliseconds);
 </script>
 
 <style scoped>
