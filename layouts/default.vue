@@ -1,5 +1,5 @@
 <template>
-  <v-app dark>
+  <v-app light>
     <v-navigation-drawer
       width="100px"
       :permanent="permanent" :drawer="drawer" :mini-variant="miniVariant" :clipped="clipped" color="#000" app>
@@ -14,21 +14,20 @@
         </v-list-tile>
       </v-list>
     </v-navigation-drawer>
-    <v-toolbar :clipped-left="clipped" fixed app color="black">
+
+    <v-toolbar :clipped-left="clipped" fixed app >
       <v-toolbar-side-icon @click="drawer = !drawer" />
       <v-toolbar-title v-text="title" />
       <v-spacer />
     </v-toolbar>
 
-
     <v-content>
       <v-container>
         <nuxt />
       </v-container>
-
     </v-content>
 
-    <v-bottom-nav app :active.sync="bottomNav" :value="true"  color="black">
+    <v-bottom-nav app :active.sync="bottomNav" :value="false">
       <v-btn color="darkgrey" flat>
         <span>Connect</span>
         <v-icon>chat</v-icon>
@@ -52,7 +51,7 @@ export default {
   data() {
     return {
       bottomNav: "",
-      clipped: false,
+      clipped: true,
       permanent: false,
       drawer: true,
       items: [
@@ -63,8 +62,8 @@ export default {
         },
         {
           icon: "bubble_chart",
-          title: "Inspire",
-          to: "/inspire"
+          title: "yang",
+          to: "/yang"
         }
       ],
       miniVariant: true,

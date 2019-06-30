@@ -3,7 +3,7 @@
     <v-layout v-bind="binding" row>
       <v-flex xs6>
         <v-hover>
-          <v-card color="#1A1A1A" slot-scope="{ hover }" :class="`elevation-${hover ? 12 : 2}`">
+          <v-card color="#F1F1F1" slot-scope="{ hover }" :class="`elevation-${hover ? 12 : 2}`">
             <v-img src="/nikki.png" contain></v-img>
             <v-card-actions>
               <v-btn flat>Explore</v-btn>
