@@ -2,7 +2,7 @@
   <v-container grid-list-xl text-xs-center>
     <v-layout align-center justify-center row fill-height wrap>
       <!-- card with image -->
-      <v-flex xs12 offset-sm0>
+      <v-flex xs10 offset-sm0>
         <v-card>
           <v-img src="/yang_crowd.png" aspect-ratio="1.95"></v-img>
 
@@ -31,7 +31,6 @@
           </v-slide-y-transition>
         </v-card>
       </v-flex>
-
       <!-- followers count -->
       <div>
         <v-hover>
