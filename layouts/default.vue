@@ -32,13 +32,12 @@
       <nuxt />
     </v-content>
 
-    <v-bottom-nav app :active.sync="bottomNav" :value="true">
-
+    <v-bottom-nav app :active.sync="bottomNav" :height="bottomNav.height" :value="true">
       <v-btn color="black" flat :href="`mailto:${email}`">
         <span>Anything I can improve / add?</span>
         <v-icon>chat</v-icon>
       </v-btn>
-<!--
+      <!--
       <v-btn color="teal">
         <span>Showcase</span>
         <v-icon>collections</v-icon>
@@ -47,7 +46,7 @@
       <v-btn color="teal">
         <span>Nearby</span>
         <v-icon>place</v-icon>
-      </v-btn> -->
+      </v-btn>-->
     </v-bottom-nav>
   </v-app>
 </template>
@@ -56,16 +55,18 @@
 export default {
   data() {
     return {
-      email: 'mailto:obinsalamah@protonmail.com',
-      bottomNav: '',
+      email: "mailto:obinsalamah@protonmail.com",
+      bottomNav: {
+        height: 46
+      },
       clipped: true,
       temporary: false,
       drawer: false,
       items: [
         {
           icon: "apps",
-          title: "",
-          to: "/pages"
+          title: "omaraziz",
+          to: "/"
         },
         {
           icon: "bubble_chart",
