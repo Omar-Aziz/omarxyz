@@ -3,6 +3,7 @@ const colors = require('vuetify/es5/util/colors').default
 module.exports = {
   mode: 'universal',
   render: {
+    resourceHints: false,
     csp: {
       hashArgorism: 'sha256',
       policies: {
@@ -12,6 +13,7 @@ module.exports = {
       }
     }
   },
+  
   /*
    ** Headers of the page
    */

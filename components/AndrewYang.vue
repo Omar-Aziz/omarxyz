@@ -56,11 +56,10 @@
 </template>
 
 <script>
-// import { setTimeout } from "timers";
 export default {
-  name: "yang",
   data() {
     return {
+      name: "yang",
       show: false,
       hover: true,
       tile: true,
