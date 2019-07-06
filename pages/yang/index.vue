@@ -11,7 +11,7 @@ export default {
     AndrewYang
   },
 
-  async data() {
+  data: () => {
     return {
       name: 'Yang',
     }

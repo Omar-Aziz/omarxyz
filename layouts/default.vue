@@ -56,11 +56,10 @@ export default {
   data() {
     return {
       email: "mailto:obinsalamah@protonmail.com",
-      bottomNav: {
-        height: 46
-      },
+      bottomNav: "",
+      height: 46,
       clipped: true,
-      temporary: false,
+      permanent: false,
       drawer: false,
       items: [
         {
@@ -72,6 +71,11 @@ export default {
           icon: "bubble_chart",
           title: "yang",
           to: "/yang"
+        },
+        {
+          icon: "mail",
+          title: "mailer",
+          to: "/"
         }
       ],
       miniVariant: true,

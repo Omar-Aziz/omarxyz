@@ -70,7 +70,7 @@ export default {
   computed: {
     binding() {
       const binding = {};
-      if (this.$vuetify.breakpoint.xs) binding.column = true;
+      if (this.$vuetify.breakpoint.sm) binding.column = true;
       if (this.$vuetify.breakpoint.mdAndUp) binding.row = true;
       return binding;
     }

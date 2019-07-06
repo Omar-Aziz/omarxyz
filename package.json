@@ -13,6 +13,7 @@
   "dependencies": {
     "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/vuetify": "0.5.5",
+    "body-parser": "^1.19.0",
     "cross-env": "^5.2.0",
     "express": "^4.16.4",
     "nodemailer": "^6.2.1",
