@@ -1,7 +1,7 @@
 <template>
-  <v-container grid-list-xl>
-    <v-layout v-bind="binding" row>
-      <v-flex xs6>
+  <v-container grid-list-xl text-xs-center>
+    <v-layout row v-bind="binding">
+      <v-flex xs6 shrink>
         <v-hover>
           <v-card color="#F1F1F1" slot-scope="{ hover }" :class="`elevation-${hover ? 12 : 2}`">
             <v-img src="/nikki.png" contain></v-img>
@@ -70,7 +70,7 @@ export default {
   computed: {
     binding() {
       const binding = {};
-      if (this.$vuetify.breakpoint.sm) binding.column = true;
+      if (this.$vuetify.breakpoint.smAndDown) binding.column = true;
       if (this.$vuetify.breakpoint.mdAndUp) binding.row = true;
       return binding;
     }
