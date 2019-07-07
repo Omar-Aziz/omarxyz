@@ -86,3 +86,9 @@ sw.*
 
 # Mac OSX
 .DS_Store
+
+.well-known
+.well-known/
+
+certs
+certs/
