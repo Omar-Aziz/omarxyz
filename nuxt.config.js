@@ -41,7 +41,7 @@ module.exports = {
       },
       {
         rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons'
+        href: 'material-design-icons-iconfont/dist/material-design-icons.css'
       }
     ]
   },
@@ -54,7 +54,7 @@ module.exports = {
   /*
    ** Global CSS
    */
-  css: ['~css/default.css', '~/css/transition.css'],
+  css: ['~css/default.css', '~/css/transition.css', 'material-design-icons-iconfont/dist/material-design-icons.css'],
   /*
    ** Plugins to load before mounting the App
    */
@@ -64,11 +64,13 @@ module.exports = {
    */
   modules: [
     '@nuxtjs/vuetify',
+
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     // dotenv
 
   ],
+
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
