@@ -26,7 +26,7 @@ mailer.use(
 
 let storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        cb(null, 'upload/')
+        cb(null, '/tmp/')
     },
     filename: (req, file, cb) => {
         cb(null, `${file.fieldname}-${time()}`)

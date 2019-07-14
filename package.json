@@ -9,7 +9,7 @@
     "build": "nuxt build",
     "start": "NODE_ENV=production node server/index.js",
     "generate": "nuxt generate",
-    "-": "NODE_ENV=development nodemon server/index.js --watch server"
+    "heroku-postbuild": "npm run build"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.3.6",
