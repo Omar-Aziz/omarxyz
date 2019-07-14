@@ -26,7 +26,7 @@ export default {
   data: () => {
     return {
       active: null,
-      text: "Anything I can improve / add?",
+      text: "Anything I can improve / add? (site under construction btw :)",
       height: "55%",
       dialog: false,
       icon: "mail"
