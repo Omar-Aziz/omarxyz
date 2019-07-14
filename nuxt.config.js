@@ -1,4 +1,5 @@
 const colors = require('vuetify/es5/util/colors').default
+require('dotenv').config()
 
 module.exports = {
   mode: 'universal',
@@ -48,12 +49,12 @@ module.exports = {
    ** Customize the progress-bar color
    */
   loading: {
-    color: '#fff'
+    color: '#2045'
   },
   /*
    ** Global CSS
    */
-  css: [],
+  css: ['~css/default.css', '~/css/transition.css'],
   /*
    ** Plugins to load before mounting the App
    */
@@ -65,6 +66,8 @@ module.exports = {
     '@nuxtjs/vuetify',
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
+    // dotenv
+
   ],
   /*
    ** Axios module configuration

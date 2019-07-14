@@ -5,23 +5,28 @@
   "author": "Omar Bin Salamah",
   "private": true,
   "scripts": {
-    "dev": "cross-env NODE_ENV=development nodemon server/index.js --watch server",
+    "dev": "NODE_ENV=development nodemon server/index.js --watch server",
     "build": "nuxt build",
-    "start": "cross-env NODE_ENV=production node server/index.js",
-    "generate": "nuxt generate"
+    "start": "NODE_ENV=production node server/index.js",
+    "generate": "nuxt generate",
+    "-": "NODE_ENV=development nodemon server/index.js --watch server"
   },
   "dependencies": {
     "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/vuetify": "0.5.5",
     "body-parser": "^1.19.0",
     "cross-env": "^5.2.0",
+    "debug": "^4.1.1",
+    "dotenv": "^8.0.0",
     "express": "^4.16.4",
+    "multer": "^1.4.1",
     "nodemailer": "^6.2.1",
-    "nuxt": "^2.0.0"
+    "nuxt": "^2.0.0",
+    "vuetify-loader": "^1.2.2"
   },
   "devDependencies": {
+    "nodemon": "^1.19.1",
     "stylus": "^0.54.5",
-    "stylus-loader": "^3.0.2",
-    "nodemon": "^1.18.9"
+    "stylus-loader": "^3.0.2"
   }
 }

@@ -1,0 +1,88 @@
+body {
+  background-image: linear-gradient(to right bottom,
+      #2a082a,
+      #240b28,
+      #1e0d25,
+      #1a0e21,
+      #160e1d,
+      #110e1b,
+      #0d0e19,
+      #0a0e16,
+      #050d14,
+      #020c11,
+      #000b0d,
+      #000909);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.default-gradient-bg {
+  background-image: linear-gradient(to right bottom,
+      #2a082a,
+      #240b28,
+      #1e0d25,
+      #1a0e21,
+      #160e1d,
+      #110e1b,
+      #0d0e19,
+      #0a0e16,
+      #050d14,
+      #020c11,
+      #000b0d,
+      #000909);
+}
+
+.reversed-gradient-bg {
+  background-image: linear-gradient(to left top,
+      #2a082a,
+      #240b28,
+      #1e0d25,
+      #1a0e21,
+      #160e1d,
+      #110e1b,
+      #0d0e19,
+      #0a0e16,
+      #050d14,
+      #020c11,
+      #000b0d,
+      #000909);
+}
+
+.default-gradient-item {
+  background: -webkit-linear-gradient(190deg, #f27121, #e94057, #8a2387);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.theme--dark.application,
+.v-navigation-drawer .v-list,
+.theme--dark.v-toolbar {
+  background: transparent;
+}
+
+.theme--light.v-system-bar {
+  background: linear-gradient(30deg, #f27121, #e94057, #8a2387);
+  color: white;
+}
+
+.g-icon {
+  background: linear-gradient(30deg, #f27121, #e94057, #8a2387);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.default-gradient-item {
+  background: -webkit-linear-gradient(90deg, #f27121, #e94057, #8a2387);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.trans {
+  box-shadow: 0.1rem 0 0.5rem 0.1rem rgba(0, 0, 10, 0.3);
+  border-radius: 0.2px;
+  position: relative;
+  background: inherit;
+  overflow: hidden;
+  height: 100%;
+  margin: auto;
+}
+

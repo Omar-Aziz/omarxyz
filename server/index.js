@@ -1,12 +1,15 @@
 const express = require('express');
 const consola = require('consola');
+const debug = require('debug')('http');
 const {
   Nuxt,
   Builder
 } = require('nuxt');
 const bodyParser = require('body-parser');
 const mailer = require('../API/mailer');
-const logger = require('../middleware/logger');
+
+
+//const logger = require('../middleware/logger');
 const app = express();
 
 app.use(bodyParser.urlencoded({
@@ -14,9 +17,8 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 
-app.use(logger);
+//app.use(logger);
 app.use(mailer);
-
 // Import and Set Nuxt.js options
 const config = require('../nuxt.config.js');
 config.dev = !(process.env.NODE_ENV === 'production');
@@ -43,7 +45,8 @@ async function start() {
   // Listen the server
   app.listen(port, host)
   consola.ready({
-    message: `Server listening on http://${host}:${port}`,
+    message: `Server listening on http://${host}:${port} \n
+              Is .env working? [${process.env.DOESITWORK}]`,
     badge: true
   })
 }

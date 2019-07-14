@@ -87,8 +87,25 @@ sw.*
 # Mac OSX
 .DS_Store
 
+# .vscode
+.vscode
+.vscode/
+
 .well-known
 .well-known/
 
 certs
 certs/
+
+.scratch
+.scratch/
+
+# environment variables used locally
+.env
+
+# test page in pages
+pages/test
+pages/test/
+
+components/test
+components/test/

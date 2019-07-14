@@ -1,14 +1,14 @@
 <template>
   <div>
-    <AndrewYang />
+    <xyzYang />
   </div>
 </template>
 
 <script>
-import AndrewYang from "~/components/AndrewYang.vue";
+import xyzYang from "~/components/xyzYang.vue";
 export default {
   components: {
-    AndrewYang
+    xyzYang
   },
 
   data: () => {
