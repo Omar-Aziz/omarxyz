@@ -1,5 +1,5 @@
 <template>
-  <content>
+  <div>
     <v-navigation-drawer v-model="drawer" mini-variant app>
       <!-- :clipped-left="true" -->
       <!-- <v-toolbar app  class="test" :clipped-left="false">
@@ -44,7 +44,7 @@
       <v-toolbar-title v-text="title" />
       <v-spacer />
     </v-toolbar>
-  </content>
+  </div>
 </template>
 
 <script>
@@ -63,8 +63,13 @@ export default {
       items: [
         {
           title: 'home',
-          icon: 'apps',
+          icon: 'home',
           to: '/'
+        },
+        {
+          title: 'projects',
+          icon: 'apps',
+          to: '/projects'
         },
         {
           icon: 'bubble_chart',
@@ -83,7 +88,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .theme--dark.v-navigation-drawer {
   background-color: rgba(0, 0, 0, 0.2);
 }
@@ -96,8 +101,6 @@ export default {
 .theme--dark.v-list {
   padding: 0px;
 }
-
-
 
 .theme--dark.v-navigation-drawer:hover {
   background: rgba(42, 8, 42, 0.2);

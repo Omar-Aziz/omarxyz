@@ -62,7 +62,10 @@ module.exports = {
   /*
    ** Global CSS
    */
-  css: ['~css/default.css', '~/css/transition.css', 'material-design-icons-iconfont/dist/material-design-icons.css'],
+  css: ['~css/default.css',
+    '~/css/transition.css',
+    '@mdi/font/css/materialdesignicons.css',
+    'material-design-icons-iconfont/dist/material-design-icons.css'],
   /*
    ** Plugins to load before mounting the App
    */

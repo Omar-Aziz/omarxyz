@@ -1,3 +1,5 @@
 # omarxyz
 
-> Expiremnting with Nuxt and server side rendering
+> Expiremnting with server side rendering using Nuxt, Express and Vue
+
+[check it](https://www.omaraziz.xyz)

@@ -10,7 +10,6 @@
             </v-icon>
           </v-btn>
         </template>
-
         <div class="default-gradient-bg">
           <xyzMail />
         </div>
@@ -28,8 +27,8 @@ export default {
   data: () => {
     return {
       active: null,
-      text: 'Anything I can improve / add? Send me your suggestions :)',
-      height: '55%',
+      text: 'comment/share/hit the like btn/subscribe',
+      height: '58%',
       dialog: false,
       icon: 'mail'
     }
@@ -48,7 +47,10 @@ export default {
 }
 
 .theme--dark.v-bottom-nav {
-  background: rgba(0, 0, 1, 0.3);
+  background: rgba(0, 0, 0, 0.2);
+  background: inherit;
+  overflow: hidden;
+
   text-align: center;
 }
 </style>

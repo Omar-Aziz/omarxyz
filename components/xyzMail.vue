@@ -4,7 +4,7 @@
       <div class="cardSize">
         <v-card hover class="vcard">
           <v-toolbar card class="toolbar">
-            <v-icon class>
+            <v-icon class="icon">
               {{ icons.mail }}
             </v-icon>
             <v-toolbar-title class="default-gradient-item">
@@ -22,7 +22,7 @@
               :disabled="!verified"
               @submit.prevent="submit"
             >
-              <v-icon class>
+              <v-icon class="icon">
                 {{ icons.send }}
               </v-icon>
             </v-btn>
@@ -93,6 +93,7 @@
 
           <v-checkbox
             v-model="verified"
+            color="pink darken-4"
             style="
               padding-left: 10px;
               margin: auto;
@@ -220,7 +221,7 @@ export default {
   opacity: 0.2;
 }
 
-.theme--dark.v-icon {
+.theme--dark.icon {
   background: -moz-linear-gradient(
     50deg,
     #e94057 0%,
@@ -249,7 +250,7 @@ export default {
   -webkit-text-fill-color: transparent;
 }
 
-.theme--dark.v-icon:hover {
+.theme--dark.icon:hover {
   background: linear-gradient(180deg, #f7ba48, #fa3d8c, #8a2381);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
