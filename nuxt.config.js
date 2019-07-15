@@ -48,9 +48,10 @@ module.exports = {
       rel: 'icon',
       type: 'image/x-icon',
       href: '/favicon.ico'
-    }
-
-    ]
+    }, {
+      rel: 'stylesheet',
+      href: 'material-design-icons-iconfont/dist/material-design-icons.css'
+    }]
   },
   /*
    ** Customize the progress-bar color
@@ -61,7 +62,7 @@ module.exports = {
   /*
    ** Global CSS
    */
-  css: ['~css/default.css', '~/css/transition.css'],
+  css: ['~css/default.css', '~/css/transition.css', 'material-design-icons-iconfont/dist/material-design-icons.css'],
   /*
    ** Plugins to load before mounting the App
    */

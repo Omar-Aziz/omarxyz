@@ -97,17 +97,7 @@ export default {
   padding: 0px;
 }
 
-.theme--dark.v-icon {
-  background: -webkit-linear-gradient(90deg, #f5782b, #e94057, #8a2387);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
 
-.theme--dark.v-icon:hover {
-  background: linear-gradient(180deg, #f7ba48, #fa3d8c, #8a2381);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
 
 .theme--dark.v-navigation-drawer:hover {
   background: rgba(42, 8, 42, 0.2);

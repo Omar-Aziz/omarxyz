@@ -4,7 +4,7 @@
       <div class="cardSize">
         <v-card hover class="vcard">
           <v-toolbar card class="toolbar">
-            <v-icon class="default-gradient-item">
+            <v-icon class>
               {{ icons.mail }}
             </v-icon>
             <v-toolbar-title class="default-gradient-item">
@@ -17,12 +17,12 @@
               left
               flat
               form="email-form"
-              action="submit"
               type="submit"
               name="submit"
               :disabled="!verified"
+              @submit.prevent="submit"
             >
-              <v-icon class="default-gradient-item">
+              <v-icon class>
                 {{ icons.send }}
               </v-icon>
             </v-btn>
@@ -110,7 +110,7 @@
             </summary>
             <ul v-for="(file, key) in files" :key="(file, key)">
               <li>
-                <v-icon small class="default-gradient-item">
+                <v-icon small>
                   image
                 </v-icon>
                 {{ file.name }}
@@ -210,7 +210,7 @@ export default {
 }
 </script>
 
-<style lang="css" scoped>
+<style>
 .cardSize {
   width: 650px;
 }
@@ -220,7 +220,42 @@ export default {
   opacity: 0.2;
 }
 
-.vcard {
+.theme--dark.v-icon {
+  background: -moz-linear-gradient(
+    50deg,
+    #e94057 0%,
+    #8a2387 100%
+  ); /* ff3.6+ */
+  background: -webkit-gradient(
+    linear,
+    left bottom,
+    right top,
+    color-stop(0%, #e94057),
+    color-stop(100%, #8a2387)
+  ); /* safari4+,chrome */
+  background: -webkit-linear-gradient(
+    50deg,
+    #e94057 0%,
+    #8a2387 100%
+  ); /* safari5.1+,chrome10+ */
+  background: -o-linear-gradient(
+    50deg,
+    #e94057 0%,
+    #8a2387 100%
+  ); /* opera 11.10+ */
+  background: -ms-linear-gradient(50deg, #e94057 0%, #8a2387 100%); /* ie10+ */
+  background: linear-gradient(40deg, #e94057 0%, #8a2387 100%); /* w3c */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.theme--dark.v-icon:hover {
+  background: linear-gradient(180deg, #f7ba48, #fa3d8c, #8a2381);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.theme--dark.vcard {
   box-shadow: 0.2rem 0 0.6rem 0.2rem rgba(0, 0, 10, 0.5);
   border-radius: 4px;
   position: relative;

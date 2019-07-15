@@ -47,7 +47,12 @@
               :class="`elevation-${hover ? 12 : 2}`"
               class="mx-auto"
               :tile="tile"
-              style="background: #110e17"
+              style="background: inherit;
+                    box-shadow: 0.2rem 0 0.5rem 0.1rem rgba(0, 0, 10, 0.9);
+                    border-radius: 5px;
+                    position: relative;
+                    background: inherit;
+                    overflow: hidden;"
             >
               <v-card-text class="font-weight-regular counter">
                 {{ yang.twitterTitle }}
@@ -95,8 +100,12 @@ export default {
   computed: {
     binding () {
       const binding = {}
-      if (this.$vuetify.breakpoint.smAndDown) { binding.xs = true }
-      if (this.$vuetify.breakpoint.mdAndUp) { binding.xs8 = true }
+      if (this.$vuetify.breakpoint.smAndDown) {
+        binding.xs = true
+      }
+      if (this.$vuetify.breakpoint.mdAndUp) {
+        binding.xs8 = true
+      }
       return binding
     }
   }
@@ -109,7 +118,6 @@ export default {
   width: 100%;
   justify-content: center;
   justify-items: center;
-  text-align: center !important;
 }
 
 .wrapperDiv {
@@ -140,30 +148,12 @@ export default {
   height: 1100px;
 }
 
-.card {
-  background: -moz-linear-gradient(
-    50deg,
-    #e94057 0%,
-    #8a2387 100%
-  ); /* ff3.6+ */
-  background: -webkit-gradient(
-    linear,
-    left bottom,
-    right top,
-    color-stop(0%, #e94057),
-    color-stop(100%, #8a2387)
-  ); /* safari4+,chrome */
-  background: -webkit-linear-gradient(
-    50deg,
-    #e94057 0%,
-    #8a2387 100%
-  ); /* safari5.1+,chrome10+ */
-  background: -o-linear-gradient(
-    50deg,
-    #e94057 0%,
-    #8a2387 100%
-  ); /* opera 11.10+ */
-  background: -ms-linear-gradient(50deg, #e94057 0%, #8a2387 100%); /* ie10+ */
-  background: linear-gradient(40deg, #e94057 0%, #8a2387 100%); /* w3c */
+.theme--dark.card {
+  background: inherit;
+  box-shadow: 0.2rem 0 0.5rem 0.1rem rgba(0, 0, 10, 0.9);
+  border-radius: 5px;
+  position: relative;
+  background: inherit;
+  overflow: hidden;
 }
 </style>
