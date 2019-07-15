@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import xyzYang from "~/components/xyzYang.vue";
+import xyzYang from '~/components/xyzYang.vue'
 export default {
   components: {
     xyzYang
@@ -13,23 +13,23 @@ export default {
 
   data: () => {
     return {
-      name: 'Yang',
+      name: 'Yang'
     }
   },
 
-  head() {
+  head () {
     return {
-      title: "Yang",
+      title: 'Yang',
       meta: [
         {
-          hid: "description",
-          name: "description",
+          hid: 'description',
+          name: 'description',
           content: this.metaDescription
         },
-        { name: "keywords", content: this.metaTag }
+        { name: 'keywords', content: this.metaTag }
       ]
-    };
+    }
   }
-};
+}
 
 </script>

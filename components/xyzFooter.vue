@@ -4,13 +4,15 @@
       <v-dialog v-model="dialog" transition="dialog-bottom-transition" :fullscreen="false">
         <template v-slot:activator="{ on }">
           <v-btn v-on="on">
-            {{text}}
-            <v-icon class="default-gradient-item">{{ icon }}</v-icon>
+            {{ text }}
+            <v-icon class="default-gradient-item">
+              {{ icon }}
+            </v-icon>
           </v-btn>
         </template>
 
         <div class="default-gradient-bg">
-          <xyzMail></xyzMail>
+          <xyzMail />
         </div>
       </v-dialog>
     </div>
@@ -18,7 +20,7 @@
 </template>
 
 <script>
-import xyzMail from "~/components/xyzMail.vue";
+import xyzMail from '~/components/xyzMail.vue'
 export default {
   components: {
     xyzMail
@@ -26,13 +28,13 @@ export default {
   data: () => {
     return {
       active: null,
-      text: "Anything I can improve / add? Send me your suggestions :)",
-      height: "55%",
+      text: 'Anything I can improve / add? Send me your suggestions :)',
+      height: '55%',
       dialog: false,
-      icon: "mail"
-    };
+      icon: 'mail'
+    }
   }
-};
+}
 </script>
 
 <style>

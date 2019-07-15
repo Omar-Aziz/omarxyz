@@ -9,12 +9,12 @@
 </template>
 
 <script>
-import xyzHeader from "~/components/xyzHeader.vue";
-import xyzFooter from "~/components/xyzFooter.vue";
+import xyzHeader from '~/components/xyzHeader.vue'
+import xyzFooter from '~/components/xyzFooter.vue'
 export default {
   components: {
     xyzHeader,
     xyzFooter
   }
-};
+}
 </script>

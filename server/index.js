@@ -1,29 +1,25 @@
-const express = require('express');
-const consola = require('consola');
-const debug = require('debug')('http');
+const express = require('express')
+const consola = require('consola')
 const {
   Nuxt,
   Builder
-} = require('nuxt');
-const bodyParser = require('body-parser');
-const mailer = require('../API/mailer');
+} = require('nuxt')
+const bodyParser = require('body-parser')
+const mailer = require('../API/mailer')
 
-
-//const logger = require('../middleware/logger');
-const app = express();
+const app = express()
 
 app.use(bodyParser.urlencoded({
   extended: true
-}));
-app.use(bodyParser.json());
+}))
+app.use(bodyParser.json())
 
-//app.use(logger);
-app.use(mailer);
+app.use(mailer)
 // Import and Set Nuxt.js options
-const config = require('../nuxt.config.js');
-config.dev = !(process.env.NODE_ENV === 'production');
+const config = require('../nuxt.config.js')
+config.dev = !(process.env.NODE_ENV === 'production')
 
-async function start() {
+async function start () {
   // Init Nuxt.js
   const nuxt = new Nuxt(config)
 

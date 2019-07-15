@@ -4,37 +4,43 @@
       <div class="cardSize">
         <v-card hover class="vcard">
           <v-toolbar card class="toolbar">
-            <v-icon class="default-gradient-item">{{ icons.mail }}</v-icon>
-            <v-toolbar-title class="default-gradient-item">{{ toolbarMsg }}</v-toolbar-title>
-            <v-spacer></v-spacer>
+            <v-icon class="default-gradient-item">
+              {{ icons.mail }}
+            </v-icon>
+            <v-toolbar-title class="default-gradient-item">
+              {{ toolbarMsg }}
+            </v-toolbar-title>
+            <v-spacer />
             <v-btn
+              id="submit"
               round
               left
               flat
               form="email-form"
               action="submit"
               type="submit"
-              id="submit"
               name="submit"
               :disabled="!verified"
             >
-              <v-icon class="default-gradient-item">{{ icons.send }}</v-icon>
+              <v-icon class="default-gradient-item">
+                {{ icons.send }}
+              </v-icon>
             </v-btn>
           </v-toolbar>
           <div>
-            <v-divider></v-divider>
-            <v-divider></v-divider>
-            <v-divider></v-divider>
+            <v-divider />
+            <v-divider />
+            <v-divider />
           </div>
 
           <v-form
             id="email-form"
+            ref="form"
             action="/send-email"
             method="POST"
             enctype="multipart/form-data"
-            ref="form"
             class="form"
-          ></v-form>
+          />
 
           <v-text-field
             class="text-input"
@@ -46,11 +52,11 @@
             full-width
             hide-no-data
             hide-details
-          ></v-text-field>
+          />
 
           <div class="default-gradient-bg">
-            <v-divider></v-divider>
-            <v-divider></v-divider>
+            <v-divider />
+            <v-divider />
           </div>
 
           <v-text-field
@@ -62,11 +68,11 @@
             full-width
             hide-no-data
             hide-details
-          ></v-text-field>
+          />
 
           <div class="default-gradient-bg">
-            <v-divider></v-divider>
-            <v-divider></v-divider>
+            <v-divider />
+            <v-divider />
           </div>
 
           <v-textarea
@@ -78,64 +84,69 @@
             required
             full-width
             auto-grow
-          ></v-textarea>
+          />
 
           <div class="default-gradient-bg">
-            <v-divider></v-divider>
-            <v-divider></v-divider>
+            <v-divider />
+            <v-divider />
           </div>
 
           <v-checkbox
+            v-model="verified"
             style="
               padding-left: 10px;
               margin: auto;
-
                "
             value="agree"
-            v-model="verified"
             label="Tick me to send or attach images"
-          ></v-checkbox>
+          />
 
           <details open style="padding: 0 0 0 17px; margin-top: -20px">
             <summary
-              class="default-gradient-item"
               v-show="files.length > 0 ? !upload : upload"
-            >Attachments</summary>
-            <ul v-for="(file, key) in files">
+              class="default-gradient-item"
+            >
+              Attachments
+            </summary>
+            <ul v-for="(file, key) in files" :key="(file, key)">
               <li>
-                <v-icon small class="default-gradient-item">image</v-icon>
+                <v-icon small class="default-gradient-item">
+                  image
+                </v-icon>
                 {{ file.name }}
               </li>
               <v-img
+                :ref="'image'+parseInt( key )"
                 form="email-form"
                 :height="images.height"
                 :width="images.width"
                 class="preview hideImg"
-                v-bind:ref="'image'+parseInt( key )"
                 name="img"
                 alt="img"
-              ></v-img>
+              />
             </ul>
           </details>
 
-          <v-btn block flat @click="$refs.files.click()" :disabled="!verified" >
+          <v-btn block flat :disabled="!verified" @click="$refs.files.click()">
             Attach images
-            <v-icon right small class="default-gradient-item">{{ icons.attach }}</v-icon>
+            <v-icon right small class="default-gradient-item">
+              {{ icons.attach }}
+            </v-icon>
           </v-btn>
           <input
-           class="default-gradient-item"
             v-show="false"
+            id="files"
+            ref="files"
+            class="default-gradient-item"
             form="email-form"
             type="file"
             name="img"
-            id="files"
-            ref="files"
             accept="image/*"
             multiple
             @change="handleFilesUpload"
-          />
+          >
 
-          <v-divider></v-divider>
+          <v-divider />
         </v-card>
       </div>
     </v-layout>
@@ -148,60 +159,60 @@ export default {
     return {
       verified: false,
       upload: false,
-      toolbarMsg: "Compose",
+      toolbarMsg: 'Compose',
       icons: {
-        mail: "mail",
-        send: "send",
-        attach: "attach_file"
+        mail: 'mail',
+        send: 'send',
+        attach: 'attach_file'
       },
 
       images: {
-        height: "50px",
-        width: "50px"
+        height: '50px',
+        width: '50px'
       },
       files: []
-    };
+    }
   },
 
   computed: {},
 
   methods: {
-    addFiles() {
-      this.$refs.files.click();
+    addFiles () {
+      this.$refs.files.click()
     },
 
-    handleFilesUpload() {
-      let uploadedFiles = this.$refs.files.files;
+    handleFilesUpload () {
+      const uploadedFiles = this.$refs.files.files
 
-      for (var i = 0; i < uploadedFiles.length; i++) {
-        this.files.push(uploadedFiles[i]);
+      for (let i = 0; i < uploadedFiles.length; i++) {
+        this.files.push(uploadedFiles[i])
       }
 
-      this.getImagePreviews();
+      this.getImagePreviews()
     },
 
-    getImagePreviews() {
+    getImagePreviews () {
       for (let i = 0; i < this.files.length; i++) {
         if (/\.(jpe?g|png|gif)$/i.test(this.files[i].name)) {
-          let reader = new FileReader();
+          const reader = new FileReader()
           reader.addEventListener(
-            "load",
-            function() {
-              this.$refs["image" + parseInt(i)][0].src = reader.result;
+            'load',
+            function () {
+              this.$refs['image' + parseInt(i)][0].src = reader.result
             }.bind(this),
             false
-          );
-          reader.readAsDataURL(this.files[i]);
+          )
+          reader.readAsDataURL(this.files[i])
         }
       }
     }
   }
-};
+}
 </script>
 
 <style lang="css" scoped>
 .cardSize {
-  width: 650px
+  width: 650px;
 }
 
 .v-divider {
@@ -229,7 +240,7 @@ export default {
 
 @media only screen and (max-width: 600px) {
   .cardSize {
-    width: 335px;
+    width: 400px;
   }
 }
 

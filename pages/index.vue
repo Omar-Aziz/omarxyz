@@ -4,10 +4,12 @@
       <v-flex xs7>
         <v-hover>
           <v-card slot-scope="{ hover }" :class="`elevation-${hover ? 12 : 2}`" class="card">
-            <v-img src="/nikki.png" contain></v-img>
+            <v-img src="/nikki.png" contain />
             <v-card-actions>
-              <v-btn flat class="trans" :href="buttons.links.nikki" target="_blank">{{ buttons.to }}</v-btn>
-              <v-spacer></v-spacer>
+              <v-btn flat class="trans" :href="buttons.links.nikki" target="_blank">
+                {{ buttons.to }}
+              </v-btn>
+              <v-spacer />
               <v-btn icon @click="show1 = !show1">
                 <v-icon>{{ show1 ? 'keyboard_arrow_down' : 'keyboard_arrow_up' }}</v-icon>
               </v-btn>
@@ -16,7 +18,9 @@
             <v-slide-y-transition>
               <v-card-text v-show="show1">
                 {{ cards.nikki }}
-                <v-btn block small class="btn" to="/mailer">{{ buttons.default }}</v-btn>
+                <v-btn block small class="btn" to="/mailer">
+                  {{ buttons.default }}
+                </v-btn>
               </v-card-text>
             </v-slide-y-transition>
           </v-card>
@@ -25,15 +29,17 @@
       <v-flex xs7>
         <v-hover>
           <v-card slot-scope="{ hover }" :class="`elevation-${hover ? 12 : 2}`" class="card">
-            <v-img src="/paradise.png" contain></v-img>
+            <v-img src="/paradise.png" contain />
             <v-card-actions>
               <v-btn
                 flat
                 class="trans"
                 :href="buttons.links.paradise"
                 target="_blank"
-              >{{ buttons.to }}</v-btn>
-              <v-spacer></v-spacer>
+              >
+                {{ buttons.to }}
+              </v-btn>
+              <v-spacer />
               <v-btn icon @click="show2 = !show2">
                 <v-icon>{{ show2 ? 'keyboard_arrow_down' : 'keyboard_arrow_up' }}</v-icon>
               </v-btn>
@@ -41,7 +47,9 @@
             <v-slide-y-transition>
               <v-card-text v-show="show2">
                 {{ cards.paradise }}
-                <v-btn block small class="btn" to="/mailer">{{ buttons.default }}</v-btn>
+                <v-btn block small class="btn" to="/mailer">
+                  {{ buttons.default }}
+                </v-btn>
               </v-card-text>
             </v-slide-y-transition>
           </v-card>
@@ -56,29 +64,29 @@ export default {
   data: () => ({
     cards: {
       nikki:
-        "Nikki is a tattoo artist based in Iowa City. She wroks at & owns Temple Body Arts located next to the Iowa City Public Library",
-      paradise: "Almost Paradise is a smoke shop located in Iowa City"
+        'Nikki is a tattoo artist based in Iowa City. She wroks at & owns Temple Body Arts located next to the Iowa City Public Library',
+      paradise: 'Almost Paradise is a smoke shop located in Iowa City'
     },
     buttons: {
-      default: "Suggestions / comments",
-      to: "Explore",
+      default: 'Suggestions / comments',
+      to: 'Explore',
       links: {
-        nikki: "https://tattoosbynikki.com",
-        paradise: "https://almostparadise-ic.com"
+        nikki: 'https://tattoosbynikki.com',
+        paradise: 'https://almostparadise-ic.com'
       }
     },
     show1: false,
     show2: false
   }),
   computed: {
-    binding() {
-      const binding = {};
-      if (this.$vuetify.breakpoint.smAndDown) binding.column = true;
-      if (this.$vuetify.breakpoint.mdAndUp) binding.row = true;
-      return binding;
+    binding () {
+      const binding = {}
+      if (this.$vuetify.breakpoint.smAndDown) { binding.column = true }
+      if (this.$vuetify.breakpoint.mdAndUp) { binding.row = true }
+      return binding
     }
   }
-};
+}
 </script>
 
 <style>

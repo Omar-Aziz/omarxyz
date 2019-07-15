@@ -1,10 +1,13 @@
 # omarxyz
 
-> My funkadelic Nuxt.js project
+> A personal website using Node, Express, Vue, Nuxt
 
-## Build Setup
+## Wanna check it out locally?
 
 ``` bash
+# Clone it
+git clone https://github.com/Omar-Aziz/omarxyz.git
+
 # install dependencies
 $ npm run install
 
@@ -16,7 +19,7 @@ $ npm run build
 $ npm run start
 
 # generate static project
-$ npm run generate
+$ npm run generate (for static sites only so ignore this)
 ```
 
-For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
+Check it out in action? [omaraziz.xyz](https://www.omaraziz.xyz).

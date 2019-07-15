@@ -20,12 +20,12 @@
         <v-list>
           <v-list-tile avatar class="test">
             <v-list-tile-avatar>
-              <v-img :src="toolbar.img"></v-img>
+              <v-img :src="toolbar.img" />
             </v-list-tile-avatar>
             <v-list-tile-content>
               <v-list-tile-title>{{ toolbar.title }}</v-list-tile-title>
             </v-list-tile-content>
-            <v-list-tile-action></v-list-tile-action>
+            <v-list-tile-action />
           </v-list-tile>
         </v-list>
         <v-list-tile v-for="(item, i) in items" :key="i" :to="item.to" router exact>
@@ -49,7 +49,7 @@
 
 <script>
 export default {
-  data() {
+  data () {
     return {
       clipped: true,
       permanent: false,
@@ -57,31 +57,30 @@ export default {
       drawer: false,
       miniVariant: true,
       toolbar: {
-        title: "Omar Aziz",
-        img: "/self.jpg"
+        title: 'Omar Aziz',
+        img: '/self.jpg'
       },
       items: [
         {
-          title: "home",
-          icon: "apps",
-          title: "omaraziz",
-          to: "/"
+          title: 'home',
+          icon: 'apps',
+          to: '/'
         },
         {
-          icon: "bubble_chart",
-          title: "yang",
-          to: "/yang"
+          icon: 'bubble_chart',
+          title: 'yang',
+          to: '/yang'
         },
         {
-          icon: "mail",
-          title: "mailer",
-          to: "/mailer"
+          icon: 'mail',
+          title: 'mailer',
+          to: '/mailer'
         }
       ],
-      title: "omaraziz"
-    };
+      title: 'omaraziz'
+    }
   }
-};
+}
 </script>
 
 <style>

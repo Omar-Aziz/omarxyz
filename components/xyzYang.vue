@@ -5,17 +5,21 @@
         <v-layout align-center justify-center>
           <v-flex v-bind="binding">
             <v-card class="card">
-              <v-img src="/yang_crowd.png" aspect-ratio="1.95"></v-img>
+              <v-img src="/yang_crowd.png" aspect-ratio="1.95" />
 
               <v-card-text primary-title class="text-md-center">
                 <div>
-                  <h3 class="headline mb-0">{{ yang.main }}</h3>
+                  <h3 class="headline mb-0">
+                    {{ yang.main }}
+                  </h3>
                 </div>
               </v-card-text>
 
               <v-card-actions>
-                <v-btn flat :href="yang.donate" target="_blank">{{ yang.donateBtn }}</v-btn>
-                <v-spacer></v-spacer>
+                <v-btn flat :href="yang.donate" target="_blank">
+                  {{ yang.donateBtn }}
+                </v-btn>
+                <v-spacer />
                 <v-btn icon @click="show = !show">
                   <v-icon>{{ show ? 'keyboard_arrow_down' : 'keyboard_arrow_up' }}</v-icon>
                 </v-btn>
@@ -25,7 +29,7 @@
                   <div>
                     {{ yang.quote }}
                     <span class="font-italic">
-                      <br />-Andrew Yang
+                      <br>-Andrew Yang
                     </span>
                   </div>
                 </v-card-text>
@@ -37,19 +41,23 @@
         <v-layout text-xs-center>
           <v-hover>
             <v-card
+              slot-scope="{ hover }"
               xs8
               light
-              slot-scope="{ hover }"
               :class="`elevation-${hover ? 12 : 2}`"
               class="mx-auto"
               :tile="tile"
               style="background: #110e17"
             >
-              <v-card-text class="font-weight-regular counter">{{ yang.twitterTitle }}</v-card-text>
+              <v-card-text class="font-weight-regular counter">
+                {{ yang.twitterTitle }}
+              </v-card-text>
               <div class="frameDiv">
-                <iframe class="frame" :src="yang.count"></iframe>
+                <iframe class="frame" :src="yang.count" />
               </div>
-              <v-btn flat :href="yang.twitter" target="_blank" color="blue">Twitter</v-btn>
+              <v-btn flat :href="yang.twitter" target="_blank" color="blue">
+                Twitter
+              </v-btn>
             </v-card>
           </v-hover>
         </v-layout>
@@ -62,18 +70,18 @@
 export default {
   data: () => {
     return {
-      name: "yang",
+      name: 'yang',
       show: false,
       hover: true,
       tile: true,
       yang: {
-        main: "Andrew Yang",
-        donateBtn: "Contribute to Yang",
-        twitter: "https://twitter.com/AndrewYang",
-        twitterTitle: "LIVE TWITTER FOLLOWERS COUNT",
+        main: 'Andrew Yang',
+        donateBtn: 'Contribute to Yang',
+        twitter: 'https://twitter.com/AndrewYang',
+        twitterTitle: 'LIVE TWITTER FOLLOWERS COUNT',
         donate:
-          "https://secure.actblue.com/donate/ayorganicdebatejune19190627genall?utm_source=website&utm_medium=Organic&utm_campaign=DebateJune19&utm_term=&utm_content=190627ButtonTopNav&refcode=DebateJune19190627ButtonTopNav",
-        count: "https://livecounts.net/twitter/andrewyang",
+          'https://secure.actblue.com/donate/ayorganicdebatejune19190627genall?utm_source=website&utm_medium=Organic&utm_campaign=DebateJune19&utm_term=&utm_content=190627ButtonTopNav&refcode=DebateJune19190627ButtonTopNav',
+        count: 'https://livecounts.net/twitter/andrewyang',
         quote: `"I’m not a career politician—I’m an entrepreneur who understands the economy.
       It’s clear to me, and to many of the nation’s best job creators, that we need to make an
       unprecedented change, and we need to make it now. But the establishment isn’t willing to
@@ -82,17 +90,17 @@ export default {
       no strings attached, paid for by a new tax on the companies benefiting most from automation."
         `
       }
-    };
+    }
   },
   computed: {
-    binding() {
-      const binding = {};
-      if (this.$vuetify.breakpoint.smAndDown) binding.xs = true;
-      if (this.$vuetify.breakpoint.mdAndUp) binding.xs8 = true;
-      return binding;
+    binding () {
+      const binding = {}
+      if (this.$vuetify.breakpoint.smAndDown) { binding.xs = true }
+      if (this.$vuetify.breakpoint.mdAndUp) { binding.xs8 = true }
+      return binding
     }
   }
-};
+}
 </script>
 
 <style>
