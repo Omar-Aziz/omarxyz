@@ -47,12 +47,6 @@ body {
       #000909);
 }
 
-.default-gradient-item {
-  background: -webkit-linear-gradient(190deg, #f27121, #e94057, #8a2387);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
 .theme--dark.application,
 .v-navigation-drawer .v-list,
 .theme--dark.v-toolbar {
@@ -71,7 +65,8 @@ body {
 }
 
 .default-gradient-item {
-  background: -webkit-linear-gradient(90deg, #f27121, #e94057, #8a2387);
+  background: -webkit-linear-gradient(30deg, #8a3c0c, #e94057, #8a2387);
+  background: linear-gradient(30deg, #8a3c0c, #e94057, #8a2387);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -85,4 +80,3 @@ body {
   height: 100%;
   margin: auto;
 }
-

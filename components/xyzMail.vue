@@ -8,7 +8,6 @@
             <v-toolbar-title class="default-gradient-item">{{ toolbarMsg }}</v-toolbar-title>
             <v-spacer></v-spacer>
             <v-btn
-              class="default-gradient-item"
               round
               left
               flat
@@ -19,7 +18,7 @@
               name="submit"
               :disabled="!verified"
             >
-              <v-icon>{{ icons.send }}</v-icon>
+              <v-icon class="default-gradient-item">{{ icons.send }}</v-icon>
             </v-btn>
           </v-toolbar>
           <div>
@@ -87,8 +86,12 @@
           </div>
 
           <v-checkbox
-            class="default-gradient-item"
-            style="padding-left: 10px; margin: auto"
+            style="
+              padding-left: 10px;
+              margin: auto;
+              background: rgba(42, 8, 42, 0.1);
+              opacity: 1;
+               "
             value="agree"
             v-model="verified"
             label="Tick me to send or attach images"
@@ -116,9 +119,9 @@
             </ul>
           </details>
 
-          <v-btn block flat @click="$refs.files.click()" class="default-gradient-item attach">
+          <v-btn block flat @click="$refs.files.click()">
             Attach images
-            <v-icon right small>{{ icons.attach }}</v-icon>
+            <v-icon right small class="default-gradient-item">{{ icons.attach }}</v-icon>
           </v-btn>
           <input
             v-show="false"
@@ -218,10 +221,6 @@ export default {
 
 .hideImg {
   display: none;
-}
-
-.v-btn:hover {
-  color: rgba(42, 8, 42, 0.1);
 }
 
 /* @media only screen and (max-width: 600px) {
