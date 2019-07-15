@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-layout flex align-start justify-center>
-      <div v-bind:style="{width: '650px'}">
+      <div class="cardSize">
         <v-card hover class="vcard">
           <v-toolbar card class="toolbar">
             <v-icon class="default-gradient-item">{{ icons.mail }}</v-icon>
@@ -89,7 +89,7 @@
             style="
               padding-left: 10px;
               margin: auto;
- 
+
                "
             value="agree"
             v-model="verified"
@@ -200,6 +200,10 @@ export default {
 </script>
 
 <style lang="css" scoped>
+.cardSize {
+  width: 650px
+}
+
 .v-divider {
   background: rgba(42, 8, 42, 0.9);
   opacity: 0.2;
@@ -223,10 +227,11 @@ export default {
   display: none;
 }
 
-/* @media only screen and (max-width: 600px) {
-  .vcard {
+@media only screen and (max-width: 600px) {
+  .cardSize {
+    width: 335px;
   }
-} */
+}
 
 .transparent {
   background-color: transparent !important;
