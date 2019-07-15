@@ -89,8 +89,7 @@
             style="
               padding-left: 10px;
               margin: auto;
-              background: rgba(42, 8, 42, 0.1);
-              opacity: 1;
+ 
                "
             value="agree"
             v-model="verified"
@@ -119,11 +118,12 @@
             </ul>
           </details>
 
-          <v-btn block flat @click="$refs.files.click()">
+          <v-btn block flat @click="$refs.files.click()" :disabled="!verified" >
             Attach images
             <v-icon right small class="default-gradient-item">{{ icons.attach }}</v-icon>
           </v-btn>
           <input
+           class="default-gradient-item"
             v-show="false"
             form="email-form"
             type="file"
