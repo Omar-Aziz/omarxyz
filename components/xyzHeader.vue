@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-navigation-drawer v-model="drawer" mini-variant app>
+    <v-navigation-drawer v-model="drawer" mini-variant floating app>
       <!-- :clipped-left="true" -->
       <!-- <v-toolbar app  class="test" :clipped-left="false">
         <v-list class="pa-0">
@@ -94,7 +94,7 @@ export default {
 }
 
 .test {
-  background: linear-gradient(30deg, #f5782b, #e94057, #8a2387);
+  background: linear-gradient(30deg, #f5792bd0, #e94057, #8a2323);
   margin: 0;
 }
 

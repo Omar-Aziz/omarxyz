@@ -47,8 +47,8 @@ export default {
 }
 
 .theme--dark.v-bottom-nav {
-  background: rgba(0, 0, 0, 0.2);
-  background: inherit;
+  background: rgba(0, 0, 0, 0.4);
+
   overflow: hidden;
 
   text-align: center;

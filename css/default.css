@@ -1,5 +1,8 @@
 body {
-  background-image: linear-gradient(to right bottom,
+  background-image: url('/flowers.jpg');
+  background-size: cover
+
+  /* background-image: linear-gradient(to right bottom,
       #2a082a,
       #240b28,
       #1e0d25,
@@ -12,7 +15,7 @@ body {
       #020c11,
       #000b0d,
       #000909);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif; */
 }
 
 .theme--dark.v-content {
@@ -75,7 +78,7 @@ body {
 }
 
 .trans {
-  box-shadow: 0.1rem 0 0.5rem 0.1rem rgba(0, 0, 10, 0.3);
+  box-shadow: 0.1rem 0 0.3rem 0.1rem rgba(0, 0, 10, 0.6);
   border-radius: 0.2px;
   position: relative;
   background: inherit;

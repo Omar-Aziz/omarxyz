@@ -16,7 +16,7 @@
               </v-card-text>
 
               <v-card-actions>
-                <v-btn flat :href="yang.donate" target="_blank">
+                <v-btn flat :href="yang.donate" target="_blank" class="trans">
                   {{ yang.donateBtn }}
                 </v-btn>
                 <v-spacer />
