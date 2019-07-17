@@ -32,7 +32,6 @@
             <v-divider />
             <v-divider />
           </div>
-
           <v-form
             id="email-form"
             ref="form"
@@ -41,7 +40,6 @@
             enctype="multipart/form-data"
             class="form"
           />
-
           <v-text-field
             class="text-input"
             form="email-form"
@@ -146,7 +144,6 @@
             multiple
             @change="handleFilesUpload"
           >
-
           <v-divider />
         </v-card>
       </div>

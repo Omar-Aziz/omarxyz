@@ -1,6 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
+
+#2P {font-family: 'Press Start 2P', cursive;}
+
 body {
   background-image: url('/flowers.jpg');
-  background-size: cover
+  background-size: cover;
+  font-family: 'Press Start 2P', cursive;
 
   /* background-image: linear-gradient(to right bottom,
       #2a082a,

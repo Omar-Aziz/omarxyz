@@ -2,9 +2,9 @@
   <div class="mainDiv">
     <v-card class="topCard">
       <v-container text-xs-center>
-        <layout align-start>
+        <v-layout align-start>
           <v-flex>
-            <v-card class="mx-auto" color="#1b95e0" dark max-width="420">
+            <v-card class="mx-auto childCard" color="#1b95e0" dark max-width="420">
               <v-card-title>
                 <v-icon
                   large
@@ -44,7 +44,7 @@
               </v-card-actions>
             </v-card>
           </v-flex>
-        </layout>
+        </v-layout>
       </v-container>
     </v-card>
   </div>
@@ -72,15 +72,14 @@ export default {
 .mainDiv {
   height: 100%;
   width: 100%;
-
 }
 
 /* display: flex to center errything */
 .topCard {
   background-image: url("/flowers.jpg");
   background-size: cover;
-  opacity: 1;
-  box-shadow: 0.2rem 1rem 1rem 0.5rem rgba(0, 0, 10, 0.3);
+  opacity: 0.95;
+  box-shadow: 0.2rem 1rem 1rem 0.5rem rgba(0, 0, 0, 0.3);
   justify-content: center;
   margin: 0 auto;
   height: 100%;
@@ -89,12 +88,17 @@ export default {
 }
 
 .topCard:hover {
-  background-color: rgba(0, 0, 0, 0.2);
-  box-shadow: 0 0.8rem 0.8rem 0.7rem rgba(0, 0, 10, 0.2);
+  box-shadow: 1rem 0.2rem 0.8rem 0.7rem rgba(0, 0, 0, 0.5);
+  opacity: 1;
 }
 
 .childCard {
-  background-color: rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0.8rem 0.8rem 0.7rem rgba(0, 0, 10, 0.3);
+}
+
+.childCard:hover {
+  box-shadow: 0 0.8rem 0.8rem 0.7rem rgba(0, 0, 10, 0.1);
+  opacity: 1;
 }
 
 .v-divider {
