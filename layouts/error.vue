@@ -5,7 +5,7 @@
         <v-layout align-center>
           <v-flex>
             <h1 v-if="error.statusCode === 404" class="txt">
-              {{ 404 }}
+              {{ result }}
             </h1>
             {{ notFound }}
             <span class="blink">_</span>
@@ -43,7 +43,7 @@ export default {
   },
   data: () => {
     return {
-      404: '404',
+      result: '404',
       notFound: 'Page Not Found',
       otherError: 'An error occurred',
       msg: "The page you're looking for doesn't exist"
