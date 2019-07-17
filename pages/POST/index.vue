@@ -1,22 +1,20 @@
 <template>
   <div class="mainDiv">
-    <v-card id="err">
+    <v-card id="succ">
       <v-container text-xs-center>
         <v-layout align-center>
           <v-flex>
-            <h1 v-if="error.statusCode === 404" class="txt">
-              {{ 404 }}
+            <h1 id="h1">
+              {{ check }}
             </h1>
-            {{ notFound }}
-            <span class="blink">_</span>
+            <p id="result">
+              {{ result }}
+            </p>
             <v-card-text id="txt">
               {{ msg }}
             </v-card-text>
-            <!-- <h1 v-else>
-            {{ otherError }}
-            </h1>-->
             <NuxtLink class="home" to="/">
-              Go Home
+              {{ direct }}
             </NuxtLink>
           </v-flex>
         </v-layout>
@@ -29,24 +27,19 @@
 export default {
   layout: 'empty',
   props: {
-    error: {
+    post: {
       type: Object,
       default: null
     }
   },
-  head () {
-    const title =
-      this.error.statusCode === 404 ? this.pageNotFound : this.otherError
-    return {
-      title
-    }
-  },
+
   data: () => {
     return {
-      404: '404',
-      notFound: 'Page Not Found',
-      otherError: 'An error occurred',
-      msg: "The page you're looking for doesn't exist"
+      check: '✔︎',
+      result: 'Success 💯',
+      msg: 'Your email has been sent. I will get back to you whenever I feel like it',
+      direct: 'Go Home',
+      200: '200'
     }
   }
 }
@@ -57,44 +50,23 @@ export default {
 * {
   font-family: "Press Start 2P";
 }
-
 .mainDiv {
   height: 100%;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.6);
 }
-#err {
-  padding: 2rem;
+#succ {
+  padding: 0rem;
+  text-align: center;
   background: transparent;
-  color: #54fe54;
   text-shadow: 0 0 10px;
   font-size: 2rem;
 }
-#err .txt {
-  font-size: 4rem;
-}
-@keyframes blink {
-  0% {
-    opacity: 0;
-  }
-  49% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 1;
-  }
+#h1, #result {
+  color: #54fe54;
 }
 #txt {
-  font-size: 0.8rem;
-  color: #fff
-}
-.blink {
-  animation-name: blink;
-  animation-duration: 1s;
-  animation-iteration-count: infinite;
+  font-size: 0.8rem
 }
 .home {
   text-decoration: none;

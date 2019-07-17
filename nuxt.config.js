@@ -48,9 +48,6 @@ module.exports = {
       rel: 'icon',
       type: 'image/x-icon',
       href: '/favicon.ico'
-    }, {
-      rel: 'stylesheet',
-      href: 'material-design-icons-iconfont/dist/material-design-icons.css'
     }]
   },
   /*
@@ -64,9 +61,7 @@ module.exports = {
    */
   css: ['~css/default.css',
     '~/css/transition.css',
-    '@mdi/font/css/materialdesignicons.css',
-    'material-design-icons-iconfont/dist/material-design-icons.css'],
-  /*
+    '@mdi/font/css/materialdesignicons.css'], /*
    ** Plugins to load before mounting the App
    */
   plugins: [],

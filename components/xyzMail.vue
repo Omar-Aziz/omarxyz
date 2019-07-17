@@ -97,7 +97,7 @@
               margin: auto;
                "
             value="agree"
-            label="Tick me to send or attach images"
+            label="Tick this to perform any action 💯"
           />
 
           <details open style="padding: 0 0 0 17px; margin-top: -20px">

@@ -113,7 +113,7 @@ mailer.post('/send-email', up.array('img'), (req, res) => {
     }
   })
   res.writeHead(301, {
-    Location: '/' // go home after POSTing
+    Location: '/post' // go to success after POSTing
   })
   try {
     res.send()
