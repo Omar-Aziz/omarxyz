@@ -29,7 +29,7 @@ module.exports = {
     titleTemplate: '%s - ' + process.env.npm_package_name,
     title: process.env.npm_package_name || '',
     meta: [{
-      charset: 'utf-8'
+      charset: 'UTF-8'
     },
     {
       name: 'viewport',
@@ -58,7 +58,9 @@ module.exports = {
    */
   css: ['~css/default.css',
     '~/css/transition.css',
-    '@mdi/font/css/materialdesignicons.css'], /*
+    '@mdi/font/css/materialdesignicons.css'
+  ],
+  /*
    ** Plugins to load before mounting the App
    */
 
