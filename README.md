@@ -1,7 +1,7 @@
 
 # omarxyz.xyz
 
-#### Expiremnting with server side rendering using [Nuxt.js](https://nuxtjs.org/)
+#### Having fun with [Nuxt.js](https://nuxtjs.org/)
 ------------
 
 #### [check it](https://www.omaraziz.xyz) *

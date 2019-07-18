@@ -15,12 +15,9 @@ module.exports = {
   mode: 'universal',
   render: {
     resourceHints: true,
-    csp: {
-      hashArgorism: 'sha256',
-      policies: {
-        'script-src': [
-          "'sha256-4RS22DYeB7U14dra4KcQYxmwt5HkOInieXK1NUMBmQI='" // this line resolves the violation
-        ]
+    bundleRender: { // will come in handly later ;)
+      shouldPreload: (file, type) => {
+        return ['script', 'style', 'font'].include(type)
       }
     }
   },
@@ -64,6 +61,7 @@ module.exports = {
     '@mdi/font/css/materialdesignicons.css'], /*
    ** Plugins to load before mounting the App
    */
+
   plugins: [],
   /*
    ** Nuxt.js modules

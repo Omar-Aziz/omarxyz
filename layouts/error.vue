@@ -7,14 +7,14 @@
             <h1 v-if="error.statusCode === 404" class="txt">
               {{ result }}
             </h1>
+            <h1 v-else>
+              {{ otherError }}
+            </h1>
             {{ notFound }}
             <span class="blink">_</span>
             <v-card-text id="txt">
               {{ msg }}
             </v-card-text>
-            <!-- <h1 v-else>
-            {{ otherError }}
-            </h1>-->
             <NuxtLink class="home" to="/">
               Go Home
             </NuxtLink>
@@ -27,7 +27,7 @@
 
 <script>
 export default {
-  layout: 'empty',
+  layout: 'error',
   props: {
     error: {
       type: Object,
@@ -38,7 +38,13 @@ export default {
     const title =
       this.error.statusCode === 404 ? this.pageNotFound : this.otherError
     return {
-      title
+      title,
+      link: [
+        {
+          rel: 'stylesheet',
+          href: 'https://fonts.googleapis.com/css?family=Press+Start+2P'
+        }
+      ]
     }
   },
   data: () => {
@@ -53,15 +59,11 @@ export default {
 </script>
 
 <style scoped>
-@import url("https://fonts.googleapis.com/css?family=Press+Start+2P");
-* {
-  font-family: "Press Start 2P";
-}
-
 .mainDiv {
   height: 100%;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.8);
+
 }
 #err {
   padding: 2rem;
@@ -69,9 +71,11 @@ export default {
   color: #54fe54;
   text-shadow: 0 0 10px;
   font-size: 2rem;
+  font-family: "Press Start 2P"
 }
 #err .txt {
   font-size: 4rem;
+  font-family: "Press Start 2P"
 }
 @keyframes blink {
   0% {
