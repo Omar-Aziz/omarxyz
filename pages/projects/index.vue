@@ -27,7 +27,7 @@ export default {
         name: 'Tattos By Nikki',
         image: '/nikki.png',
         source: 'https://tattoosbynikki.com',
-        summary: 'Nikki is dope',
+        summary: 'Nikki is a tattoo artist based in Iowa City. She wroks at & owns Temple Body Arts located next to the Iowa City Public Library',
         inquire: 'inquire'
       },
       {
@@ -35,7 +35,7 @@ export default {
         name: 'Almost Paradise',
         image: '/paradise.png',
         source: 'https://almostparadise-ic.com',
-        summary: 'Paradise is dope',
+        summary: 'Almost Paradise is a smoke shop located in Iowa City',
         inquire: 'inquire'
       }]
     }

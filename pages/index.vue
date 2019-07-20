@@ -10,7 +10,7 @@
                   large
                   left
                 >
-                  {{ icons.twitter }}
+                  {{ tweetIcons.twitter }}
                 </v-icon>
                 <span class="title font-weight-bold">
                   {{ tag }}</span>
@@ -19,7 +19,6 @@
               <v-card-text class="headline font-weight-slim">
                 {{ tweet }}
               </v-card-text>
-
               <v-card-actions>
                 <v-list-tile class="grow">
                   <v-list-tile-avatar color="grey darken-3">
@@ -31,12 +30,12 @@
 
                   <v-layout align-center justify-end>
                     <v-btn icon flat depressed class="heart" to="/fun">
-                      <v-icon>{{ icons.heart }}</v-icon>
+                      <v-icon>{{ tweetIcons.heart }}</v-icon>
                     </v-btn>
                     <span class="subheading mr-2">{{ stats[0] }}</span>
                     <span class="mr-1">·</span>
                     <v-btn icon flat depressed class="share">
-                      <v-icon>{{ icons.share }}</v-icon>
+                      <v-icon>{{ tweetIcons.share }}</v-icon>
                     </v-btn>
                     <span class="subheading">{{ stats[1] }}</span>
                   </v-layout>
@@ -51,19 +50,27 @@
 </template>
 
 <script>
+const nuxtjs = 'https://nuxtjs.org'
 export default {
   data: () => ({
     img: '/self.jpg',
     name: 'Omar',
     tag: 'Twitter',
+    nuxtjs: 'https://nuxtjs.org',
     tweet:
-      "This is the worst website I've ever seen. It's dangerously slow and embarraseingly unoptimized. Geeez.",
-    icons: {
+      `Personal site where I showcase my portfolio,
+      projects I've worked on, and most importantly apply modern web technologies and skills.
+      Currently I'm focusing on SSR`,
+    tweetIcons: {
       twitter: 'mdi-twitter',
       heart: 'mdi-heart',
       share: 'mdi-share-variant'
     },
-    stats: [345, 67]
+    stats: [345, 67],
+    siteIcons: {
+      node: 'mdi-nodejs',
+      vue: 'mdi-vuejs'
+    }
   })
 }
 </script>
