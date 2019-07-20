@@ -9,14 +9,6 @@ config.dev = !(process.env.NODE_ENV === 'production')
 
 const mailer = express()
 
-mailer.use((req, res, next) => {
-  res.setHeader('Content-Security-Policy', "script-src 'self' localhost:* ws://localhost:*;")
-  res.header('Access-Control-Allow-Origin', '*')
-  res.header('Access-Control-Allow-Headers', 'Content-Type')
-  // console.log("-");
-  next()
-})
-
 /**
  * To take you to the HTML form page
  */
@@ -93,11 +85,6 @@ mailer.post('/send-email', up.array('img'), (req, res) => {
   }
 
   console.log(attachmentNotify)
-  console.log(`
-  ${data.name}
-  ${data.email}
-  ${data.name}
-  ${data.msg}`)
   // console.log(toUpload);
   // To verify if transporter is working
   // transporter.verify((err, success) => {
@@ -113,7 +100,7 @@ mailer.post('/send-email', up.array('img'), (req, res) => {
     }
   })
   res.writeHead(301, {
-    Location: '/post' // go to success after POSTing
+    Location: '/success' // go to success after POSTing
   })
   try {
     res.send()

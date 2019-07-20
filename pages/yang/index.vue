@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import xyzYang from '~/components/xyzYang.vue'
+import xyzYang from '~/components/xyzYang/xyzYang.vue'
 export default {
   components: {
     xyzYang

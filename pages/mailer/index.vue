@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import Mail from '~/components/xyzMail.vue'
+import Mail from '~/components/xyzMail/xyzMail.vue'
 export default {
   components: {
     Mail

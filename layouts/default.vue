@@ -9,8 +9,8 @@
 </template>
 
 <script>
-import xyzHeader from '~/components/xyzHeader.vue'
-import xyzFooter from '~/components/xyzFooter.vue'
+import xyzHeader from '~/components/xyzHeader/xyzHeader.vue'
+import xyzFooter from '~/components/xyzFooter/xyzFooter.vue'
 export default {
   components: {
     xyzHeader,

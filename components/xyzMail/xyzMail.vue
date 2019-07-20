@@ -258,7 +258,7 @@ export default {
   border-radius: 4px;
   position: relative;
   background: inherit;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(0, 0, 0, 0.95);
   overflow: hidden;
   height: 100%;
   margin: auto;
@@ -274,7 +274,7 @@ export default {
 
 @media only screen and (max-width: 600px) {
   .cardSize {
-    width: 350px;
+    width: 300px;
   }
 }
 

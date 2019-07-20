@@ -1,21 +1,12 @@
 <template>
   <div>
-    <v-navigation-drawer v-model="drawer" mini-variant floating app>
-      <!-- :clipped-left="true" -->
-      <!-- <v-toolbar app  class="test" :clipped-left="false">
-        <v-list class="pa-0">
-          <v-list-tile avatar>
-            <v-list-tile-avatar>
-              <v-img :src="toolbar.img"></v-img>
-            </v-list-tile-avatar>
-            <v-list-tile-content>
-              <v-list-tile-title>{{ toolbar.title }}</v-list-tile-title>
-            </v-list-tile-content>
-            <v-list-tile-action></v-list-tile-action>
-          </v-list-tile>
-        </v-list>
-      </v-toolbar>-->
-
+    <v-navigation-drawer
+      v-model="drawer"
+      :mini-variant="miniVariant"
+      floating
+      :width="width"
+      app
+    >
       <v-list>
         <v-list>
           <v-list-tile avatar class="test">
@@ -56,29 +47,37 @@ export default {
       temporary: false,
       drawer: false,
       miniVariant: true,
+      width: '',
       toolbar: {
-        title: 'Omar Aziz',
+        title: null,
         img: '/self.jpg'
       },
       items: [
         {
-          title: 'home',
+          title: 'Home',
           icon: 'home',
-          to: '/'
+          to: '/',
+          tooltip: 'huh'
         },
         {
-          title: 'projects',
+          title: 'Projects',
           icon: 'apps',
           to: '/projects'
         },
+        // {
+        //   title: 'Resume',
+        //   icon: 'description',
+        //   to: '/resume'
+        // },
         {
+          title: 'Yang',
           icon: 'bubble_chart',
-          title: 'yang',
           to: '/yang'
         },
+
         {
-          icon: 'mail',
           title: 'mailer',
+          icon: 'mail',
           to: '/mailer'
         }
       ],

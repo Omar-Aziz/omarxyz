@@ -109,3 +109,6 @@ pages/test/
 
 components/test
 components/test/
+
+static/test
+static/test/

@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import xyzMail from '~/components/xyzMail.vue'
+import xyzMail from '~/components/xyzMail/xyzMail.vue'
 export default {
   components: {
     xyzMail
