@@ -41,12 +41,23 @@ export default {
       direct: 'Go Home',
       200: '200'
     }
+  },
+  head () {
+    const title = 'Success'
+    return {
+      title,
+      link: [
+        {
+          rel: 'stylesheet',
+          href: 'https://fonts.googleapis.com/css?family=Press+Start+2P'
+        }
+      ]
+    }
   }
 }
 </script>
 
 <style scoped>
-@import url("https://fonts.googleapis.com/css?family=Press+Start+2P");
 * {
   font-family: "Press Start 2P";
 }

@@ -1,6 +1,6 @@
 <template>
   <v-container grid-list-xl>
-    <v-layout justify-center v-bind="binding">
+    <v-layout justify-center row wrap>
       <xyzProject
         v-for="project in projects"
         :id="project.id"
@@ -23,7 +23,7 @@ export default {
   data: () => {
     return {
       projects: [ {
-        id: 1,
+        id: '1',
         name: 'Tattos By Nikki',
         image: '/nikki.png',
         source: 'https://tattoosbynikki.com',
@@ -31,11 +31,19 @@ export default {
         inquire: 'inquire'
       },
       {
-        id: 2,
+        id: '2',
         name: 'Almost Paradise',
         image: '/paradise.png',
         source: 'https://almostparadise-ic.com',
         summary: 'Almost Paradise is a smoke shop located in Iowa City',
+        inquire: 'inquire'
+      },
+      {
+        id: '3',
+        name: 'Temple Body Arts',
+        image: '/temple.png',
+        source: 'https://temple-body-arts.com',
+        summary: 'Almost Body Arts is a popular tattoo shop located downtown of Iowa City',
         inquire: 'inquire'
       }]
     }

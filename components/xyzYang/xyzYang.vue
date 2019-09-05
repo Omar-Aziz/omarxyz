@@ -4,7 +4,7 @@
       <div class="wrapperDiv">
         <v-layout align-center justify-center>
           <v-flex v-bind="binding">
-            <v-card class="card">
+            <v-card id="card">
               <v-img src="/yang_crowd.png" aspect-ratio="1.95" />
 
               <v-card-text primary-title class="text-md-center">
@@ -47,11 +47,10 @@
               :class="`elevation-${hover ? 12 : 2}`"
               class="mx-auto"
               :tile="tile"
-              style="background: inherit;
+              style="background: rgba(0,0,0,0.6);
                     box-shadow: 0.2rem 0 0.5rem 0.1rem rgba(0, 0, 10, 0.9);
                     border-radius: 5px;
                     position: relative;
-                    background: inherit;
                     overflow: hidden;"
             >
               <v-card-text class="font-weight-regular counter">
@@ -61,7 +60,7 @@
                 <iframe class="frame" :src="yang.count" />
               </div>
               <v-btn flat :href="yang.twitter" target="_blank" color="blue">
-                Twitter
+                <v-icon>mdi-twitter</v-icon>
               </v-btn>
             </v-card>
           </v-hover>
@@ -113,6 +112,9 @@ export default {
 </script>
 
 <style>
+#card {
+  background: rgba(0, 0, 0, 0.8)
+}
 .v-card__text {
   padding: 10px 0;
   width: 100%;

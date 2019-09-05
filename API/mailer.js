@@ -66,21 +66,20 @@ mailer.post('/send-email', up.array('img'), (req, res) => {
     toUpload.length > 0 ? `*${data.name} included photos with this email.` : ''
 
   const mailOptions = {
-    from: `"${data.name}"
-           <${data.email}>`,
+    from: `<${data.email}>`,
     to: process.env.NODEMAILER_USER,
-    subject: `[SITE EMAIL] from ${data.name}`,
+    subject: `Site: from ${data.name}`,
     html: `
-            Sender's name:
-            <b>${data.name}</b><br/>
-            Sender 's email:
-            <b>${data.email}</b><br/>
-            <br/>Sender's message:<br/>
-            <br/>${data.msg}
-            <br/><br/>
-            <em>${attachmentNotify}</em>
-            <br/>
-            `,
+          Sender's name:
+          <b>${data.name}</b><br/>
+          Sender's email:
+          <b>${data.email}</b><br/>
+          <br/>Sender's message:<br/>
+          <br/>${data.msg}
+          <br/><br/>
+          <em>${attachmentNotify}</em>
+          <br/>
+          `,
     attachments: toUpload
   }
 

@@ -1,10 +1,10 @@
 <template>
-  <v-flex xs7>
+  <v-flex xs10 sm8 md6 xl4>
     <v-hover>
-      <v-card slot-scope="{ hover }" :class="`elevation-${hover ? 12 : 2}`" class="card">
+      <v-card id="card" slot-scope="{ hover }" :class="`elevation-${hover ? 12 : 2}`">
         <v-img :src="img" contain />
         <v-card-actions>
-          <v-btn flat class="trans" :href="src" target="_blank">
+          <v-btn flat :href="src" target="_blank">
             Explore
           </v-btn>
           <v-spacer />
@@ -59,6 +59,9 @@ export default {
 </script>
 
 <style scoped>
+#card {
+  background-color: rgba(0, 0, 0, 0.6)
+}
 .btn {
   background: -moz-linear-gradient(
     100deg,

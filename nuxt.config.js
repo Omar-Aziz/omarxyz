@@ -26,7 +26,7 @@ module.exports = {
    ** Headers of the page
    */
   head: {
-    titleTemplate: '%s - ' + process.env.npm_package_name,
+    titleTemplate: 'omaraziz',
     title: process.env.npm_package_name || '',
     meta: [{
       charset: 'UTF-8'

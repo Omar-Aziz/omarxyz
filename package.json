@@ -21,8 +21,8 @@
     "dotenv": "^8.0.0",
     "express": "^4.16.4",
     "material-design-icons-iconfont": "^5.0.1",
-    "multer": "^1.4.1",
-    "nodemailer": "^6.2.1",
+    "multer": "^1.4.2",
+    "nodemailer": "^6.3.0",
     "nuxt": "^2.0.0",
     "vuetify-loader": "^1.2.2"
   },
