@@ -1,5 +1,5 @@
 <template>
-  <v-flex xs10 sm8 md6 xl4>
+  <v-flex xs12 sm8 md6 xl4>
     <v-hover>
       <v-card id="card" slot-scope="{ hover }" :class="`elevation-${hover ? 12 : 2}`">
         <v-img :src="img" contain />
@@ -58,9 +58,9 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="css" scoped>
 #card {
-  background-color: rgba(0, 0, 0, 0.6)
+  background-color: rgba(0, 0, 0, 0.8);
 }
 .btn {
   background: -moz-linear-gradient(
@@ -89,14 +89,6 @@ export default {
   background: linear-gradient(40deg, #e94057 0%, #8a2387 100%); /* w3c */
 }
 
-.theme--dark.v-sheet {
-  background: inherit;
-  box-shadow: 0.2rem 0 0.5rem 0.1rem rgba(0, 0, 10, 0.3);
-  border-radius: 5px;
-  position: relative;
-  background: inherit;
-  overflow: hidden;
-}
 .img {
   width: 100%;
 }

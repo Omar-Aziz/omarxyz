@@ -1,7 +1,7 @@
 <template>
-  <div class="mailPage">
+  <v-layout id="mailPage" row wrap justify-center>
     <Mail />
-  </div>
+  </v-layout>
 </template>
 
 <script>
@@ -12,8 +12,8 @@ export default {
   }
 }
 </script>
-<style scoped>
-.mailPage {
+<style lang="css" scoped>
+#mailPage {
   padding-top: 50px;
 }
 </style>

@@ -1,6 +1,7 @@
 <template>
   <div>
     <v-navigation-drawer
+      id="navigation-drawer"
       v-model="drawer"
       :mini-variant="miniVariant"
       floating
@@ -9,7 +10,7 @@
     >
       <v-list>
         <v-list>
-          <v-list-tile avatar class="test">
+          <v-list-tile class="list-tile" avatar>
             <v-list-tile-avatar>
               <v-img :src="toolbar.img" />
             </v-list-tile-avatar>
@@ -30,7 +31,7 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-toolbar flat fixed app :clipped-left="false">
+    <v-toolbar id="toolbar" flat fixed app :clipped-left="false">
       <v-toolbar-side-icon @click="drawer = !drawer" />
       <v-toolbar-title v-text="title" />
       <v-spacer />
@@ -64,11 +65,6 @@ export default {
           icon: 'apps',
           to: '/projects'
         },
-        // {
-        //   title: 'Resume',
-        //   icon: 'description',
-        //   to: '/resume'
-        // },
         {
           title: 'Yang',
           icon: 'bubble_chart',
@@ -87,35 +83,27 @@ export default {
 }
 </script>
 
-<style scoped>
-.theme--dark.v-navigation-drawer {
-  background-color: rgba(0, 0, 0, 0.2);
+<style lang="css" scoped>
+#navigation-drawer {
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
-.test {
+#navigation-drawer:hover {
+  background: rgba(8, 1, 5, 0.788);
+  border-radius: 1px;
+}
+
+.list-tile {
   background: linear-gradient(30deg, #f5792bd0, #e94057, #8a2323);
-  margin: 0;
+  padding: 5px 0px 5px 0px;
 }
 
 .theme--dark.v-list {
-  padding: 0px;
+  padding-top: 0px;
 }
 
-.theme--dark.v-navigation-drawer:hover {
-  background: rgba(42, 8, 42, 0.2);
-  border-radius: 1px;
+#toolbar {
+  background: rgba(0, 0, 0, 0.4)
 }
 
-.theme--dark.v-toolbar.test {
-  background: linear-gradient(30deg, #f7ba48, #fa3d8c, #8a2381);
-  border-radius: 1px;
-}
-
-.theme--dark.v-toolbar.test:hover {
-  background: linear-gradient(60deg, #8a2381, #fa3d8c, #f7ba48);
-  border-radius: 1px;
-  position: relative;
-  overflow: hidden;
-  margin: auto;
-}
 </style>

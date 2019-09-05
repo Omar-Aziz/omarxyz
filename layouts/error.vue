@@ -105,8 +105,5 @@ export default {
 }
 .home:hover {
   text-shadow: 0 0 100px;
-  /* animation-name: blink;
-  animation-duration: 0.8s;
-  animation-iteration-count: infinite; */
 }
 </style>
