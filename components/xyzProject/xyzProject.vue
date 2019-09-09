@@ -60,7 +60,12 @@ export default {
 
 <style lang="css" scoped>
 #card {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+#card:hover {
+  background: rgba(8, 1, 5, 1);
+  border-radius: 1px;
 }
 .btn {
   background: -moz-linear-gradient(
