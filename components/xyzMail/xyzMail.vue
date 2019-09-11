@@ -150,55 +150,55 @@ export default {
     return {
       verified: false,
       upload: false,
-      toolbarMsg: "Compose",
+      toolbarMsg: 'Compose',
       icons: {
-        mail: "mail",
-        send: "send",
-        attach: "attach_file"
+        mail: 'mail',
+        send: 'send',
+        attach: 'attach_file'
       },
 
       images: {
-        height: "50px",
-        width: "50px"
+        height: '50px',
+        width: '50px'
       },
       files: []
-    };
+    }
   },
 
   computed: {},
 
   methods: {
-    addFiles() {
-      this.$refs.files.click();
+    addFiles () {
+      this.$refs.files.click()
     },
 
-    handleFilesUpload() {
-      const uploadedFiles = this.$refs.files.files;
+    handleFilesUpload () {
+      const uploadedFiles = this.$refs.files.files
 
       for (let i = 0; i < uploadedFiles.length; i++) {
-        this.files.push(uploadedFiles[i]);
+        this.files.push(uploadedFiles[i])
       }
 
-      this.getImagePreviews();
+      this.getImagePreviews()
     },
 
-    getImagePreviews() {
+    getImagePreviews () {
       for (let i = 0; i < this.files.length; i++) {
         if (/\.(jpe?g|png|gif)$/i.test(this.files[i].name)) {
-          const reader = new FileReader();
+          const reader = new FileReader()
           reader.addEventListener(
-            "load",
-            function() {
-              this.$refs["image" + parseInt(i)][0].src = reader.result;
+            'load',
+            function () {
+              this.$refs['image' + parseInt(i)][0].src = reader.result
             }.bind(this),
             false
-          );
-          reader.readAsDataURL(this.files[i]);
+          )
+          reader.readAsDataURL(this.files[i])
         }
       }
     }
   }
-};
+}
 </script>
 
 <style lang="css" scoped>

@@ -5,19 +5,14 @@ module.exports = {
   parserOptions: {
     parser: 'babel-eslint'
   },
-  extends: [
-    'eslint:recommended',
-    // https://github.com/vuejs/eslint-plugin-vue#priority-a-essential-error-prevention
-    // consider switching to `plugin:vue/strongly-recommended` or `plugin:vue/recommended` for stricter rules.
-    'plugin:vue/recommended',
-    'plugin:prettier/recommended'
-  ],
+  extends: [ 'eslint:recommended', 'plugin:vue/recommended', 'plugin:prettier/recommended' ],
   mode: 'universal',
   render: {
     resourceHints: true,
-    bundleRender: { // will come in handly later ;)
+    bundleRender: {
+      // will come in handly later ;)
       shouldPreload: (file, type) => {
-        return ['script', 'style', 'font'].include(type)
+        return [ 'script', 'style', 'font' ].include(type)
       }
     }
   },
@@ -26,26 +21,29 @@ module.exports = {
    ** Headers of the page
    */
   head: {
-    titleTemplate: 'omaraziz',
+    titleTemplate: '%s - ' + '🍇',
     title: process.env.npm_package_name || '',
-    meta: [{
-      charset: 'UTF-8'
-    },
-    {
-      name: 'viewport',
-      content: 'width=device-width, initial-scale=1'
-    },
-    {
-      hid: 'description',
-      name: 'description',
-      content: process.env.npm_package_description || ''
-    }
+    meta: [
+      {
+        charset: 'UTF-8'
+      },
+      {
+        name: 'viewport',
+        content: 'width=device-width, initial-scale=1'
+      },
+      {
+        hid: 'description',
+        name: 'description',
+        content: process.env.npm_package_description || ''
+      }
     ],
-    link: [{
-      rel: 'icon',
-      type: 'image/x-icon',
-      href: '/favicon.ico'
-    }]
+    link: [
+      {
+        rel: 'icon',
+        type: 'image/x-icon',
+        href: '/favicon.ico'
+      }
+    ]
   },
   /*
    ** Customize the progress-bar color
@@ -56,15 +54,14 @@ module.exports = {
   /*
    ** Global CSS
    */
-  css: ['~css/default.css',
-    '~/css/transition.css',
-    '@mdi/font/css/materialdesignicons.css'
-  ],
+  css: [ '~css/default.css', '~/css/transition.css', '@mdi/font/css/materialdesignicons.css' ],
   /*
    ** Plugins to load before mounting the App
    */
 
-  plugins: [],
+  plugins: [
+
+  ],
   /*
    ** Nuxt.js modules
    */
@@ -74,7 +71,6 @@ module.exports = {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios'
     // dotenv
-
   ],
 
   /*

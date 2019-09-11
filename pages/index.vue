@@ -50,7 +50,6 @@
 </template>
 
 <script>
-const nuxtjs = 'https://nuxtjs.org'
 export default {
   data: () => ({
     img: '/self.jpg',
@@ -66,12 +65,13 @@ export default {
       heart: 'mdi-heart',
       share: 'mdi-share-variant'
     },
-    stats: [345, 67],
-    siteIcons: {
-      node: 'mdi-nodejs',
-      vue: 'mdi-vuejs'
+    stats: [345, 67]
+  }),
+  head () {
+    return {
+      title: 'Home Page'
     }
-  })
+  }
 }
 </script>
 

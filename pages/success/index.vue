@@ -42,10 +42,10 @@ export default {
       200: '200'
     }
   },
+
   head () {
-    const title = 'Success'
     return {
-      title,
+      title: 'Success',
       link: [
         {
           rel: 'stylesheet',

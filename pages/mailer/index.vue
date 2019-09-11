@@ -9,6 +9,11 @@ import Mail from '~/components/xyzMail/xyzMail.vue'
 export default {
   components: {
     Mail
+  },
+  head () {
+    return {
+      title: 'Email Page'
+    }
   }
 }
 </script>

@@ -55,6 +55,11 @@ export default {
       if (this.$vuetify.breakpoint.mdAndUp) { binding.row = true }
       return binding
     }
+  },
+  head () {
+    return {
+      title: 'Projects'
+    }
   }
 }
 </script>
