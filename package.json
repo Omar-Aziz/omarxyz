@@ -19,7 +19,6 @@
     "body-parser": "^1.19.0",
     "dotenv": "^8.0.0",
     "express": "^4.16.4",
-    "granim": "^2.0.0",
     "multer": "^1.4.2",
     "nodemailer": "^6.3.0",
     "nuxt": "^2.0.0",

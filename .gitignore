@@ -112,3 +112,6 @@ components/test/
 
 static/test
 static/test/
+
+.test
+.test/
