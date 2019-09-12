@@ -16,10 +16,6 @@ module.exports = {
       }
     }
   },
-
-  /*
-   ** Headers of the page
-   */
   head: {
     titleTemplate: '%s - ' + '🍇',
     title: process.env.npm_package_name || '',
@@ -44,58 +40,23 @@ module.exports = {
         href: '/favicon.ico'
       },
       {
-
         rel: 'stylesheet',
         href: 'https://fonts.googleapis.com/css?family=Ubuntu'
-
       }
     ]
   },
-  /*
-   ** Customize the progress-bar color
-   */
   loading: {
     color: '#2045'
   },
-  /*
-   ** Global CSS
-   */
-  css: [ '~css/default.css', '~/css/transition.css', '@mdi/font/css/materialdesignicons.css' ],
-  /*
-   ** Plugins to load before mounting the App
-   */
-
-  plugins: [
-
-  ],
-  /*
-   ** Nuxt.js modules
-   */
-  modules: [
-    '@nuxtjs/vuetify',
-
-    // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios',
-    '@nuxtjs/sitemap'
-  ],
-  /**
-   * Sitemap configuration
-   */
+  css: [ '~assets/default.css', '~assets/transition.css', '@mdi/font/css/materialdesignicons.css' ],
+  plugins: [],
+  modules: [ '@nuxtjs/vuetify', '@nuxtjs/axios', '@nuxtjs/sitemap' ],
   sitemap: {
     hostname: 'https://omaraziz.xyz',
     gzip: true,
     exclude: []
   },
-
-  /*
-   ** Axios module configuration
-   ** See https://axios.nuxtjs.org/options
-   */
   axios: {},
-  /*
-   ** vuetify module configuration
-   ** https://github.com/nuxt-community/vuetify-module
-   */
   vuetify: {
     theme: {
       primary: colors.blue.darken2,
@@ -107,13 +68,7 @@ module.exports = {
       success: colors.green.accent3
     }
   },
-  /*
-   ** Build configuration
-   */
   build: {
-    /*
-     ** You can extend webpack config here
-     */
     extend (config, ctx) {}
   }
 }
