@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Press+Start+2P");
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
 
-#2P {font-family: 'Press Start 2P', cursive;}
+* {font-family: 'Ubuntu', cursive;}
 
 body {
   background-image: url('/flowers.jpg');

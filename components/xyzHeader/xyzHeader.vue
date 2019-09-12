@@ -102,8 +102,4 @@ export default {
   padding-top: 0px;
 }
 
-#toolbar {
-  background: rgba(0, 0, 0, 0.4)
-}
-
 </style>

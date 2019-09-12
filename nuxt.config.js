@@ -69,9 +69,17 @@ module.exports = {
     '@nuxtjs/vuetify',
 
     // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios'
-    // dotenv
+    '@nuxtjs/axios',
+    '@nuxtjs/sitemap'
   ],
+  /**
+   * Sitemap configuration
+   */
+  sitemap: {
+    hostname: 'https://omaraziz.xyz',
+    gzip: true,
+    exclude: []
+  },
 
   /*
    ** Axios module configuration

@@ -16,7 +16,7 @@
                   {{ tag }}</span>
               </v-card-title>
 
-              <v-card-text class="headline font-weight-slim">
+              <v-card-text style="font-size: 1.5rem">
                 {{ tweet }}
               </v-card-text>
               <v-card-actions>
