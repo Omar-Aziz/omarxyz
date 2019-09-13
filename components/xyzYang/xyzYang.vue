@@ -1,71 +1,65 @@
 <template>
   <v-container grid-list-xl text-xs-center>
     <v-layout align-center justify-center>
-      <div class="wrapperDiv">
-        <v-layout align-center justify-center>
-          <v-flex v-bind="binding">
-            <v-card id="card">
-              <v-img src="/yang_crowd.png" aspect-ratio="1.95" />
-
-              <v-card-text primary-title class="text-md-center">
-                <div>
-                  <h3 class="headline mb-0">
-                    {{ yang.main }}
-                  </h3>
-                </div>
-              </v-card-text>
-
-              <v-card-actions>
-                <v-btn flat :to="yang.donate" target="_blank" class="trans">
-                  {{ yang.donateBtn }}
-                </v-btn>
-                <v-spacer />
-                <v-btn icon @click="show = !show">
-                  <v-icon>{{ show ? 'keyboard_arrow_down' : 'keyboard_arrow_up' }}</v-icon>
-                </v-btn>
-              </v-card-actions>
-              <v-slide-y-transition>
-                <v-card-text v-show="show">
-                  <div>
-                    {{ yang.quote }}
-                    <span class="font-italic">
-                      <br>-Andrew Yang
-                    </span>
-                  </div>
-                </v-card-text>
-              </v-slide-y-transition>
-            </v-card>
-          </v-flex>
-        </v-layout>
-        <!-- followers count -->
-        <v-layout text-xs-center>
-          <v-hover>
-            <v-card
-              slot-scope="{ hover }"
-              xs8
-              light
-              :class="`elevation-${hover ? 12 : 2}`"
-              class="mx-auto"
-              :tile="tile"
-              style="background: rgba(0,0,0,0.6);
+      <v-flex xs12 sm8 md8 xl7>
+        <v-card id="card">
+          <v-img src="/yang_crowd.png" aspect-ratio="1.95" />
+          <v-card-text primary-title class="text-md-center">
+            <div>
+              <h3 class="headline mb-0">
+                {{ yang.main }}
+              </h3>
+            </div>
+          </v-card-text>
+          <v-card-actions>
+            <v-btn flat :to="yang.donate" target="_blank" class="trans">
+              {{ yang.donateBtn }}
+            </v-btn>
+            <v-spacer />
+            <v-btn icon @click="show = !show">
+              <v-icon>{{ show ? 'keyboard_arrow_down' : 'keyboard_arrow_up' }}</v-icon>
+            </v-btn>
+          </v-card-actions>
+          <v-slide-y-transition>
+            <v-card-text v-show="show">
+              <div style="padding: 0px 20px 0px 20px">
+                {{ yang.quote }}
+                <span class="font-italic">
+                  <br>-Andrew Yang
+                </span>
+              </div>
+            </v-card-text>
+          </v-slide-y-transition>
+        </v-card>
+      </v-flex>
+    </v-layout>
+    <!-- followers count -->
+    <v-layout text-xs-center>
+      <v-hover>
+        <v-card
+          slot-scope="{ hover }"
+          xs8
+          light
+          :class="`elevation-${hover ? 12 : 2}`"
+          class="mx-auto"
+          :tile="tile"
+          style="background: rgba(0,0,0,0.6);
                     box-shadow: 0.2rem 0 0.5rem 0.1rem rgba(0, 0, 10, 0.9);
                     border-radius: 5px;
                     position: relative;
                     overflow: hidden;"
-            >
-              <v-card-text class="font-weight-regular counter">
-                {{ yang.twitterTitle }}
-              </v-card-text>
-              <div class="frameDiv">
-                <iframe class="frame" :src="yang.count" />
-              </div>
-              <v-btn flat :href="yang.twitter" target="_blank" color="blue">
-                <v-icon>mdi-twitter</v-icon>
-              </v-btn>
-            </v-card>
-          </v-hover>
-        </v-layout>
-      </div>
+        >
+          <v-card-text class="font-weight-regular counter">
+            {{ yang.twitterTitle }}
+          </v-card-text>
+          <div class="frameDiv">
+            <iframe class="frame" :src="yang.count" />
+          </div>
+          <v-btn flat :href="yang.twitter" target="_blank" color="blue">
+            <v-icon>mdi-twitter</v-icon>
+          </v-btn>
+        </v-card>
+      </v-hover>
     </v-layout>
   </v-container>
 </template>

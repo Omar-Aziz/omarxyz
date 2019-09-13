@@ -1,7 +1,7 @@
 <template>
   <v-bottom-nav id="bottom-nav" app :active.sync="active" :height="height" :value="true">
     <div>
-      <v-dialog id="dialog" v-model="dialog" transition="dialog-bottom-transition" :fullscreen="false">
+      <v-dialog v-model="dialog" class="dialog" transition="dialog-bottom-transition" style="box-shadow: 100px !important">
         <template v-slot:activator="{ on }">
           <v-btn v-on="on">
             {{ text }}
@@ -41,8 +41,12 @@ export default {
   text-align: center;
 }
 
-#dialog {
-  width: 10px
+.v-dialog.v-dialog--active .theme--dark.v-dialog.v-dialog--active .v-dialog:not(.v-dialog--fullscreen) .v-dialog__content .v-dialog__content--active {
+  box-shadow: none !important;
+}
+
+.dialog {
+  box-shadow: 100px !important;
 }
 
 #container {

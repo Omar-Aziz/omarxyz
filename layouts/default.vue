@@ -18,3 +18,9 @@ export default {
   }
 }
 </script>
+<style>
+.theme--dark.v-dialog .v-dialog {
+  box-shadow: none !important;
+  width: 10px;
+}
+</style>
