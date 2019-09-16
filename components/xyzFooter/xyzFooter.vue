@@ -41,16 +41,8 @@ export default {
   text-align: center;
 }
 
-.v-dialog.v-dialog--active .theme--dark.v-dialog.v-dialog--active .v-dialog:not(.v-dialog--fullscreen) .v-dialog__content .v-dialog__content--active {
-  box-shadow: none !important;
-}
-
-.dialog {
-  box-shadow: 100px !important;
-}
-
 #container {
   margin: 0 auto;
-  box-shadow: 0.2rem 0 0.5rem 0.1rem rgba(0, 0, 10, 0.6);
+  box-shadow: 2rem 5rem 999rem rgba(0, 0, 0, 1);
 }
 </style>

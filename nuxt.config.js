@@ -48,15 +48,15 @@ module.exports = {
   loading: {
     color: '#2045'
   },
-  css: [ '~assets/default.css', '~assets/transition.css', '@mdi/font/css/materialdesignicons.css' ],
+  css: ['~assets/default.css', '~assets/transition.css'],
+  // , '@mdi/font/css/materialdesignicons.css' and @mdi/font pkg
   plugins: [],
-  modules: [ '@nuxtjs/vuetify', '@nuxtjs/axios', '@nuxtjs/sitemap' ],
+  modules: [ '@nuxtjs/vuetify', '@nuxtjs/sitemap' ],
   sitemap: {
     hostname: 'https://omaraziz.xyz',
     gzip: true,
     exclude: []
   },
-  axios: {},
   vuetify: {
     theme: {
       primary: colors.blue.darken2,

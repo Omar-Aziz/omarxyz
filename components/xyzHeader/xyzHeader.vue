@@ -66,6 +66,11 @@ export default {
           to: '/projects'
         },
         {
+          title: 'portfolio',
+          icon: 'folder_open',
+          to: 'resume'
+        },
+        {
           title: 'Yang',
           icon: 'bubble_chart',
           to: '/yang'
