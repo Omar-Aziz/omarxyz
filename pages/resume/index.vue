@@ -3,9 +3,7 @@
     <v-layout justify-center row wrap>
       <v-flex xs12 sm10 md10 lg10 xl7>
         <v-card id="title" text-xs-center>
-          <h2>
-            Nietzsche's Critique of Morality and Revaluation of Values
-          </h2>
+          <h2 v-text="topic" />
         </v-card>
       </v-flex>
       <v-flex xs12 sm10 md10 lg10 xl7>
@@ -13,21 +11,23 @@
           <v-parallax src="/fn.jpg" :aspect-ratio="aspectRatio" />
 
           <v-btn flat @click="show = !show">
-            <h2>Abstract</h2>
+            <h2 v-text="`Abstract`" />
             <v-icon x-large>
-              {{ show ? 'keyboard_arrow_down' : 'keyboard_arrow_up' }}
+              {{ show ? icons.down : icons.up }}
             </v-icon>
           </v-btn>
 
           <v-slide-y-transition>
             <v-card-text v-show="show">
-              <p id="abstract">
-                {{ abstract }}
-              </p>
-              <v-btn id="read" target="_blank" href="https://ir.uiowa.edu/honors_theses/252/">
+              <p id="abstract" v-text="abstract" />
+              <v-btn
+                id="read"
+                target="_blank"
+                href="https://ir.uiowa.edu/honors_theses/252/"
+              >
                 Read Full Text
-                <v-icon right size="22">
-                  mdi-book-open-page-variant
+                <v-icon right size="25">
+                  {{ icons.page }}
                 </v-icon>
               </v-btn>
             </v-card-text>
@@ -95,6 +95,7 @@ export default {
         }
 
       },
+      topic: `Nietzsche's Critique of Morality and Revaluation of Values`,
       abstract: `One of Nietzsche’s main projects was to critique morality and to invite
                 a revaluation of our values. Neither secular nor religious interpretations
                 of Nietzsche’s critique of morality do it justice. Each support their own
@@ -111,7 +112,12 @@ export default {
                 addition to the ongoing philosophical discussion on Nietzsche. I also hope that
                 this thesis will be accessible to those who have not yet introduced themselves
                 to the work of Nietzsche.`,
-      image: ``
+      image: ``,
+      icons: {
+        down: 'keyboard_arrow_down',
+        up: 'keyboard_arrow_up',
+        page: 'mdi-book-open-page-variant'
+      }
     }
   },
   computed: {

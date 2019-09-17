@@ -6,19 +6,14 @@
           <v-flex>
             <v-card class="mx-auto childCard" color="#1b95e0" dark max-width="420">
               <v-card-title>
-                <v-icon
-                  large
-                  left
-                >
+                <v-icon large left>
                   {{ tweetIcons.twitter }}
                 </v-icon>
                 <span class="title font-weight-bold">
-                  {{ tag }}</span>
+                  {{ tag }}
+                </span>
               </v-card-title>
-
-              <v-card-text style="font-size: 1.5rem">
-                {{ tweet }}
-              </v-card-text>
+              <v-card-text style="font-size: 1.5rem" v-text="tweet" />
               <v-card-actions>
                 <v-list-tile class="grow">
                   <v-list-tile-avatar color="grey darken-3">
