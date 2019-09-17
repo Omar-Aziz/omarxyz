@@ -10,7 +10,7 @@
       </v-flex>
       <v-flex xs12 sm10 md10 lg10 xl10>
         <v-card id="thesis" raised>
-          <v-parallax src="/FN.jpg" :aspect-ratio="aspectRatio" />
+          <v-parallax src="/fn.jpg" :aspect-ratio="aspectRatio" />
 
           <v-btn flat @click="show = !show">
             <h2>Abstract</h2>
@@ -123,10 +123,10 @@ export default {
       }
       return false
     }
-  },
-  mounted () {
-    console.log(this.$vuetify.breakpoint)
   }
+  // mounted () {
+  //   console.log(this.$vuetify.breakpoint)
+  // }
 }
 </script>
 
