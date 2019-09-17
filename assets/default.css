@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Press+Start+2P");
+@import url('https://cdn.materialdesignicons.com/4.4.95/css/materialdesignicons.min.css');
 @import url('https://fonts.googleapis.com/css?family=Ubuntu');
 
 * {font-family: 'Ubuntu';}
-
 body {
   background-image: url('/flowers.jpg');
   background-size: cover;

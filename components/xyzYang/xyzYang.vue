@@ -81,11 +81,11 @@ export default {
           'https://secure.actblue.com/donate/ayorganicdebatejune19190627genall?utm_source=website&utm_medium=Organic&utm_campaign=DebateJune19&utm_term=&utm_content=190627ButtonTopNav&refcode=DebateJune19190627ButtonTopNav',
         count: 'https://livecounts.net/twitter/andrewyang',
         quote: `"I’m not a career politician—I’m an entrepreneur who understands the economy.
-      It’s clear to me, and to many of the nation’s best job creators, that we need to make an
-      unprecedented change, and we need to make it now. But the establishment isn’t willing to
-      take the necessary bold steps. As president, my first priority will be to implement
-      Universal Basic Income for every American adult over the age of 18: $1,000 a month,
-      no strings attached, paid for by a new tax on the companies benefiting most from automation."
+                It’s clear to me, and to many of the nation’s best job creators, that we need to make an
+                unprecedented change, and we need to make it now. But the establishment isn’t willing to
+                take the necessary bold steps. As president, my first priority will be to implement
+                Universal Basic Income for every American adult over the age of 18: $1,000 a month,
+                no strings attached, paid for by a new tax on the companies benefiting most from automation."
         `
       }
     }

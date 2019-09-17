@@ -33,6 +33,7 @@ module.exports = {
         content: process.env.npm_package_description || ''
       }
     ],
+    script: [],
     link: [
       {
         rel: 'icon',
@@ -48,8 +49,7 @@ module.exports = {
   loading: {
     color: '#2045'
   },
-  css: ['~assets/default.css', '~assets/transition.css'],
-  // , '@mdi/font/css/materialdesignicons.css' and @mdi/font pkg
+  css: [ '~assets/default.css', '~assets/transition.css' ],
   plugins: [],
   modules: [ '@nuxtjs/vuetify', '@nuxtjs/sitemap' ],
   sitemap: {

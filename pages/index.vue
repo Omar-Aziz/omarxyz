@@ -63,13 +63,13 @@ export default {
     tweetIcons: {
       twitter: 'mdi-twitter',
       heart: 'mdi-heart',
-      share: 'mdi-share-variant'
+      share: 'share'
     },
     stats: [345, 67]
   }),
   head () {
     return {
-      title: 'Home Page'
+      title: 'Home'
     }
   }
 }
@@ -87,7 +87,7 @@ export default {
   background: rgba(0, 0, 0, 0);
   background-size: cover;
   opacity: 0.95;
-  box-shadow: 0.2rem 1rem 1rem 0.5rem rgba(0, 0, 0, 0.3);
+  box-shadow: 1rem 0.2rem 0.8rem 0.7rem rgba(0, 0, 0, 0.5);
   justify-content: center;
   margin: 0 auto;
   height: 100%;
@@ -96,7 +96,7 @@ export default {
 }
 
 .topCard:hover {
-  box-shadow: 1rem 0.2rem 0.8rem 0.7rem rgba(0, 0, 0, 0.5);
+  box-shadow: 0.8rem 0.5rem 0.6rem 0.8rem rgba(0, 0, 0, 0.3);
   opacity: 1;
 }
 

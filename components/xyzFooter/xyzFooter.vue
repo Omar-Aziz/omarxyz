@@ -36,7 +36,7 @@ export default {
 
 <style lang="css" scoped>
 #bottom-nav {
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.3);
   overflow: hidden;
   text-align: center;
 }
