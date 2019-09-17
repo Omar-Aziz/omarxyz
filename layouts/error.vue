@@ -1,23 +1,15 @@
 <template>
   <div class="mainDiv">
-    <v-card id="err">
+    <v-card id="err" flat>
       <v-container text-xs-center>
         <v-layout align-center>
           <v-flex>
-            <h1 v-if="error.statusCode === 404" class="txt">
-              {{ result }}
-            </h1>
-            <h1 v-else>
-              {{ otherError }}
-            </h1>
+            <h1 v-if="error.statusCode === 404" class="txt" v-text="result" />
+            <h1 v-else v-text="otherError" />
             {{ notFound }}
             <span class="blink">_</span>
-            <v-card-text id="txt">
-              {{ msg }}
-            </v-card-text>
-            <NuxtLink class="home" to="/">
-              Go Home
-            </NuxtLink>
+            <v-card-text id="txt" v-text="msg" />
+            <NuxtLink class="home" to="/" v-text="`Go Home`" />
           </v-flex>
         </v-layout>
       </v-container>
@@ -59,6 +51,9 @@ export default {
 </script>
 
 <style scoped>
+* {
+  font-family: "Press Start 2P";
+}
 .mainDiv {
   height: 100%;
   width: 100%;

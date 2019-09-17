@@ -1,21 +1,13 @@
 <template>
   <div class="mainDiv">
-    <v-card id="succ">
+    <v-card id="succ" flat>
       <v-container text-xs-center>
-        <v-layout align-center>
-          <v-flex>
-            <h1 id="h1">
-              {{ check }}
-            </h1>
-            <p id="result">
-              {{ result }}
-            </p>
-            <v-card-text id="txt">
-              {{ msg }}
-            </v-card-text>
-            <NuxtLink class="home" to="/">
-              {{ direct }}
-            </NuxtLink>
+        <v-layout justify-center row wrap>
+          <v-flex xs12 md9>
+            <h1 id="h1" v-text="check" />
+            <p id="result" v-text="result" />
+            <v-card-text id="txt" v-text="msg" />
+            <NuxtLink class="home" to="/" v-text="direct" />
           </v-flex>
         </v-layout>
       </v-container>
@@ -64,7 +56,7 @@ export default {
 .mainDiv {
   height: 100%;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.8);
 }
 #succ {
   padding: 0rem;

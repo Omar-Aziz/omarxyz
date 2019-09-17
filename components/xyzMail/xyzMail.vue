@@ -156,7 +156,7 @@ export default {
       toolbarMsg: 'Compose',
       icons: {
         mail: 'mail',
-        send: 'mdi-send',
+        send: 'send',
         send_locked: 'mdi-send-lock',
         attach: 'attach_file'
       },

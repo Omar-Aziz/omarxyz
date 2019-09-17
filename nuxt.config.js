@@ -40,15 +40,27 @@ module.exports = {
         type: 'image/x-icon',
         href: '/favicon.ico'
       },
+      // {
+      //   re: 'stylesheet',
+      //   href: 'https://cdn.materialdesignicons.com/font@4.x/css/materialdesignicons.min.css'
+      // },
+      {
+        rel: 'stylesheet',
+        href: 'https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css'
+      },
       {
         rel: 'stylesheet',
         href: 'https://fonts.googleapis.com/css?family=Ubuntu'
       }
     ]
   },
-  loading: {
-    color: '#2045'
-  },
+  loading: { color: '#2045' },
+
+  /**
+   * ru-cache to allow cached components for better render performances
+   */
+  cache: { max: 1000, maxAge: 900000 },
+
   css: [ '~assets/default.css', '~assets/transition.css' ],
   plugins: [],
   modules: [ '@nuxtjs/vuetify', '@nuxtjs/sitemap' ],
