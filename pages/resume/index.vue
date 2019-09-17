@@ -1,14 +1,14 @@
 <template>
   <v-container id="top-pad" grid-list-xl text-xs-center>
     <v-layout justify-center row wrap>
-      <v-flex xs12 sm10 md10 lg10 xl10>
+      <v-flex xs12 sm10 md10 lg10 xl7>
         <v-card id="title" text-xs-center>
           <h2>
             Nietzsche's Critique of Morality and Revaluation of Values
           </h2>
         </v-card>
       </v-flex>
-      <v-flex xs12 sm10 md10 lg10 xl10>
+      <v-flex xs12 sm10 md10 lg10 xl7>
         <v-card id="thesis" raised>
           <v-parallax src="/fn.jpg" :aspect-ratio="aspectRatio" />
 
@@ -34,15 +34,17 @@
           </v-slide-y-transition>
         </v-card>
       </v-flex>
-      <v-flex xs12 sm10 md10 lg10 xl10>
+      <v-flex xs12 sm10 md10 lg10 xl7>
         <v-sheet
           id="stats-sheet"
           height="100%"
           width="100%"
         >
           <v-card id="stats-card">
-            <v-sheet
+            <v-btn
               id="stats"
+              flat
+              block
               href="https://plu.mx/plum/a/?bepress_url_id=https%3A%2F%2Fir.uiowa.edu%2Fhonors_theses%2F252"
               data-hide-print="true"
               class="plumx-summary plum-bigben-theme"
@@ -54,7 +56,7 @@
               <v-icon right size="22" color="black">
                 mdi-chart-line-stacked
               </v-icon>
-            </v-sheet>
+            </v-btn>
           </v-card>
         </v-sheet>
       </v-flex>
@@ -132,7 +134,7 @@ export default {
 
 <style lang="css" scoped>
 #top-pad {
-  padding-top: 30px
+  padding-top: 10px
 }
 
 #title {
@@ -148,6 +150,7 @@ export default {
   background: rgb(236, 236, 236);
   width: 320px;
   padding: 0px 10px 0px 10px;
+  margin: 0 auto
 }
 
 #stats {

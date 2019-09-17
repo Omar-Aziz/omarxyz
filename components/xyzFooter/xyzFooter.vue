@@ -5,7 +5,7 @@
         <template v-slot:activator="{ on }">
           <v-btn v-on="on">
             {{ text }}
-            <v-icon class="default-gradient-item">
+            <v-icon color="pink">
               {{ icon }}
             </v-icon>
           </v-btn>

@@ -2,7 +2,7 @@
   <v-flex xs11 sm8 md6 lg4>
     <v-card id="card" hover>
       <v-toolbar id="toolbar">
-        <v-icon id="icon">
+        <v-icon size="35" color="pink" style="margin-right:">
           {{ icons.mail }}
         </v-icon>
         <v-toolbar-title class="default-gradient-item">
@@ -20,8 +20,11 @@
           :disabled="!verified"
           @submit.prevent="submit"
         >
-          <v-icon id="icon">
+          <v-icon v-if="verified" size="35" color="pink" round>
             {{ icons.send }}
+          </v-icon>
+          <v-icon v-else size="35" color="pink">
+            {{ icons.send_locked }}
           </v-icon>
         </v-btn>
       </v-toolbar>
@@ -92,7 +95,7 @@
         class="checkbox"
         color="pink darken-4"
         value="agree"
-        label="check this to perform any action 💯"
+        label="check this first to attach or send mail 💯"
       />
 
       <details id="details" open>
@@ -121,9 +124,9 @@
         </ul>
       </details>
 
-      <v-btn block flat :disabled="!verified" @click="$refs.files.click()">
+      <v-btn id="attach-btn" block flat :disabled="!verified" @click="$refs.files.click()">
         Attach images
-        <v-icon right small class="default-gradient-item">
+        <v-icon size="22" color="pink">
           {{ icons.attach }}
         </v-icon>
       </v-btn>
@@ -153,10 +156,10 @@ export default {
       toolbarMsg: 'Compose',
       icons: {
         mail: 'mail',
-        send: 'send',
+        send: 'mdi-send',
+        send_locked: 'mdi-send-lock',
         attach: 'attach_file'
       },
-
       images: {
         height: '50px',
         width: '50px'
@@ -168,6 +171,9 @@ export default {
   computed: {},
 
   methods: {
+    lock () {
+      this.verified = !this.verified
+    },
     addFiles () {
       this.$refs.files.click()
     },
@@ -202,6 +208,15 @@ export default {
 </script>
 
 <style lang="css" scoped>
+.theme--dark.v-btn.v-btn--disabled .v-icon {
+  color: #ffffff83 !important
+}
+
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+
 .cardSize {
   width: 650px;
 }
@@ -209,41 +224,6 @@ export default {
 .v-divider {
   background: rgba(42, 8, 42, 0.9);
   opacity: 0.2;
-}
-
-#icon {
-  background: -moz-linear-gradient(
-    50deg,
-    #e94057 0%,
-    #8a2387 100%
-  ); /* ff3.6+ */
-  background: -webkit-gradient(
-    linear,
-    left bottom,
-    right top,
-    color-stop(0%, #e94057),
-    color-stop(100%, #8a2387)
-  ); /* safari4+,chrome */
-  background: -webkit-linear-gradient(
-    50deg,
-    #e94057 0%,
-    #8a2387 100%
-  ); /* safari5.1+,chrome10+ */
-  background: -o-linear-gradient(
-    50deg,
-    #e94057 0%,
-    #8a2387 100%
-  ); /* opera 11.10+ */
-  background: -ms-linear-gradient(50deg, #e94057 0%, #8a2387 100%); /* ie10+ */
-  background: linear-gradient(40deg, #e94057 0%, #8a2387 100%); /* w3c */
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-#icon:hover {
-  background: linear-gradient(180deg, #f7ba48, #fa3d8c, #8a2381);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 #card {
@@ -273,6 +253,11 @@ export default {
 #details {
   padding: 0 0 0 17px;
   margin-top: -20px;
+}
+
+#attach-btn:hover {
+  font-size: 15px;
+  background: #00000000
 }
 
 @media only screen and (max-width: 600px) {

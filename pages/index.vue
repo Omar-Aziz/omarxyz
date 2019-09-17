@@ -30,12 +30,16 @@
 
                   <v-layout align-center justify-end>
                     <v-btn icon flat depressed class="heart" to="/fun">
-                      <v-icon>{{ tweetIcons.heart }}</v-icon>
+                      <v-icon color="red">
+                        {{ tweetIcons.heart }}
+                      </v-icon>
                     </v-btn>
                     <span class="subheading mr-2">{{ stats[0] }}</span>
-                    <span class="mr-1">·</span>
+                    <span class="mr-1" style="color: #1b95e0">·</span>
                     <v-btn icon flat depressed class="share">
-                      <v-icon>{{ tweetIcons.share }}</v-icon>
+                      <v-icon color="green accent-3">
+                        {{ tweetIcons.share }}
+                      </v-icon>
                     </v-btn>
                     <span class="subheading">{{ stats[1] }}</span>
                   </v-layout>
