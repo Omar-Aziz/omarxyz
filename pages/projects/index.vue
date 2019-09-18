@@ -28,7 +28,7 @@ export default {
           name: 'Hex Yeah!',
           image: '/hex.jpg',
           source: '/projects/xyzHex',
-          summary: 'blah'
+          summary: 'Convert RGB(a) colors to hex colors (example: rgba(0,0,0,0) to #000000'
 
         },
         {

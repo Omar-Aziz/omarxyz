@@ -23,6 +23,7 @@
               <v-btn
                 id="read"
                 target="_blank" rel="noopener noreferrer"
+                rel="noopener noreferrer"
                 href="https://ir.uiowa.edu/honors_theses/252/"
               >
                 Read Full Text

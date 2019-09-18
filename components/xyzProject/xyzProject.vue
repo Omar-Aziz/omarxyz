@@ -7,7 +7,13 @@
           <v-btn v-if="src[0] === '/'" flat nuxt :to="src">
             {{ name }}
           </v-btn>
-          <v-btn v-else flat :href="src" target="_blank" rel="noopener noreferrer">
+          <v-btn
+            v-else
+            flat
+            :href="src"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             {{ name }}
           </v-btn>
           <v-spacer />
