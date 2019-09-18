@@ -4,7 +4,7 @@
       <v-card id="card" slot-scope="{ hover }" :class="`elevation-${hover ? 12 : 2}`">
         <v-img id="img" :src="img" contain />
         <v-card-actions>
-          <v-btn v-if="src[0] === '/'" flat nuxt :to="src">
+          <v-btn v-if="src[0] === '/'" class="btn" flat nuxt :to="src">
             {{ name }}
           </v-btn>
           <v-btn
