@@ -9,7 +9,7 @@
           </v-btn>
           <v-btn
             v-else
-            flat
+            class="btn"
             :href="src"
             target="_blank"
             rel="noopener noreferrer"
