@@ -12,7 +12,7 @@
             </div>
           </v-card-text>
           <v-card-actions>
-            <v-btn flat :to="yang.donate" target="_blank" class="trans">
+            <v-btn flat :to="yang.donate" target="_blank" rel="noopener noreferrer" class="trans">
               {{ yang.donateBtn }}
             </v-btn>
             <v-spacer />
@@ -55,7 +55,7 @@
           <div class="frameDiv">
             <iframe class="frame" :src="yang.count" />
           </div>
-          <v-btn flat :href="yang.twitter" target="_blank" color="blue">
+          <v-btn flat :href="yang.twitter" target="_blank" rel="noopener noreferrer" color="blue">
             <v-icon>mdi-twitter</v-icon>
           </v-btn>
         </v-card>

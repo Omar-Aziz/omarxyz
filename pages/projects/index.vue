@@ -5,10 +5,10 @@
         v-for="project in projects"
         :id="project.id"
         :key="project.id"
+        :name="project.name"
         :img="project.image"
         :src="project.source"
         :brief="project.summary"
-        :check="project.inquire"
       />
     </v-layout>
   </v-container>
@@ -22,30 +22,39 @@ export default {
   },
   data: () => {
     return {
-      projects: [ {
-        id: '1',
-        name: 'Tattos By Nikki',
-        image: '/nikki.jpg',
-        source: 'https://tattoosbynikki.com',
-        summary: 'Nikki is a tattoo artist based in Iowa City. She wroks at & owns Temple Body Arts located next to the Iowa City Public Library',
-        inquire: 'inquire'
-      },
-      {
-        id: '2',
-        name: 'Almost Paradise',
-        image: '/paradise.jpg',
-        source: 'https://almostparadise-ic.com',
-        summary: 'Almost Paradise is a smoke shop located in Iowa City',
-        inquire: 'inquire'
-      },
-      {
-        id: '3',
-        name: 'Temple Body Arts',
-        image: '/temple.jpg',
-        source: 'https://temple-body-arts.com',
-        summary: 'Almost Body Arts is a popular tattoo shop located downtown of Iowa City',
-        inquire: 'inquire'
-      }]
+      projects: [
+        {
+          id: 0,
+          name: 'Hex Yeah!',
+          image: '/hex.jpg',
+          source: '/projects/xyzHex',
+          summary: 'blah'
+
+        },
+        {
+          id: 1,
+          name: 'Tattos By Nikki',
+          image: '/nikki.jpg',
+          source: 'https://tattoosbynikki.com',
+          summary: 'Nikki is a tattoo artist based in Iowa City. She wroks at & owns Temple Body Arts located next to the Iowa City Public Library',
+
+        },
+        {
+          id: 2,
+          name: 'Almost Paradise',
+          image: '/paradise.jpg',
+          source: 'https://almostparadise-ic.com',
+          summary: 'Almost Paradise is a smoke shop located in Iowa City',
+
+        },
+        {
+          id: 3,
+          name: 'Temple Body Arts',
+          image: '/temple.jpg',
+          source: 'https://temple-body-arts.com',
+          summary: 'Almost Body Arts is a popular tattoo shop located downtown of Iowa City',
+
+        }]
     }
   },
   computed: {
@@ -55,6 +64,9 @@ export default {
       if (this.$vuetify.breakpoint.mdAndUp) { binding.row = true }
       return binding
     }
+  },
+  mounted () {
+    // console.log(this.projects[0].source.substr(0, 5))
   },
   head () {
     return {

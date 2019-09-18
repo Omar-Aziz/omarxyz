@@ -2,10 +2,13 @@
   <v-flex xs12 sm8 md6 xl4>
     <v-hover>
       <v-card id="card" slot-scope="{ hover }" :class="`elevation-${hover ? 12 : 2}`">
-        <v-img :src="img" contain />
+        <v-img id="img" :src="img" contain />
         <v-card-actions>
-          <v-btn flat :href="src" target="_blank">
-            Explore
+          <v-btn v-if="src[0] === '/'" flat nuxt :to="src">
+            {{ name }}
+          </v-btn>
+          <v-btn v-else flat :href="src" target="_blank" rel="noopener noreferrer">
+            {{ name }}
           </v-btn>
           <v-spacer />
           <v-btn icon @click="show = !show">
@@ -16,7 +19,7 @@
           <v-card-text v-show="show">
             {{ brief }}
             <v-btn block small class="btn" to="/mailer">
-              {{ check }}
+              Comments?
             </v-btn>
           </v-card-text>
         </v-slide-y-transition>
@@ -29,6 +32,10 @@
 export default {
   props: {
     id: {
+      type: Number,
+      required: true
+    },
+    name: {
       type: String,
       required: true
     },
@@ -41,10 +48,6 @@ export default {
       required: true
     },
     brief: {
-      type: String,
-      required: true
-    },
-    check: {
       type: String,
       required: true
     }
@@ -94,7 +97,8 @@ export default {
   background: linear-gradient(40deg, #e94057 0%, #8a2387 100%); /* w3c */
 }
 
-.img {
-  width: 100%;
+#img {
+  height: 305px;
+  width: 100%
 }
 </style>

@@ -40,10 +40,6 @@ module.exports = {
         type: 'image/x-icon',
         href: '/favicon.ico'
       },
-      // {
-      //   re: 'stylesheet',
-      //   href: 'https://cdn.materialdesignicons.com/font@4.x/css/materialdesignicons.min.css'
-      // },
       {
         rel: 'stylesheet',
         href: 'https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css'

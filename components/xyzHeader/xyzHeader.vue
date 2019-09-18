@@ -68,7 +68,7 @@ export default {
         {
           title: 'portfolio',
           icon: 'folder_open',
-          to: 'resume'
+          to: '/profile'
         },
         {
           title: 'Yang',
