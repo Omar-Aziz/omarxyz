@@ -1,8 +1,8 @@
 <template>
-  <v-flex xs11 sm8 md6 lg4>
+  <v-flex :class="styling">
     <v-card id="card" hover>
       <v-toolbar id="toolbar">
-        <v-icon size="35" color="pink" style="margin-right:">
+        <v-icon size="35" color="pink">
           {{ icons.mail }}
         </v-icon>
         <v-toolbar-title class="default-gradient-item">
@@ -149,6 +149,16 @@
 
 <script>
 export default {
+  props: {
+    id: {
+      type: Number,
+      required: true
+    },
+    styling: {
+      type: String,
+      default: ''
+    }
+  },
   data: () => {
     return {
       verified: false,

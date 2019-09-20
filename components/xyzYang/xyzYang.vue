@@ -12,8 +12,13 @@
             </div>
           </v-card-text>
           <v-card-actions>
-            <v-btn flat :to="yang.donate" target="_blank" rel="noopener noreferrer" rel="noopener noreferrer"
-class="trans">
+            <v-btn
+              flat
+              :to="yang.donate"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="trans"
+            >
               {{ yang.donateBtn }}
             </v-btn>
             <v-spacer />
@@ -56,9 +61,19 @@ class="trans">
           <div class="frameDiv">
             <iframe class="frame" :src="yang.count" />
           </div>
-          <v-btn flat :href="yang.twitter" target="_blank" rel="noopener noreferrer" rel="noopener noreferrer"
-color="blue">
+          <v-btn
+            color="#1b95e0"
+            depressed
+            round
+            large
+            icon
+            outline
+            :href="yang.twitter"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <v-icon>mdi-twitter</v-icon>
+          </v-btn>
           </v-btn>
         </v-card>
       </v-hover>

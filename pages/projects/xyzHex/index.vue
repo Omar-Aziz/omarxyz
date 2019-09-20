@@ -28,14 +28,21 @@
           </v-btn>
         </div>
         <div id="output-div">
-          <button id="result-btn" color="#212121" @click="copyResult">
-            <h3 v-if="rev">
-              COPY
-            </h3>
-            <h3 v-else>
-              RESULT
-            </h3>
-          </button>
+          <div v-if="rev">
+            <button id="copy-btn" color="#212121" @click="copyResult">
+              <h3>
+                COPY
+              </h3>
+            </button>
+          </div>
+          <div v-else>
+            <button id="result-btn" color="#212121">
+              <h3>
+                RESULT
+              </h3>
+            </button>
+          </div>
+
           <v-textarea
             id="rev"
             v-model="rev"
@@ -49,6 +56,12 @@
             rows="2"
           />
         </div>
+        <!-- <div>
+          <v-sheet>
+            Colors
+            <input id="html5colorpicker" type="color" value="#ff0000" @click="onColor">
+          </v-sheet>
+        </div> -->
       </v-sheet>
     </v-layout>
   </v-content>
@@ -56,23 +69,30 @@
 
 <script>
 export default {
-  // rgba(0,0,0,0)
   data: () => {
     return {
-      height: 700,
-      width: 700,
+      height: 650,
+      width: 600,
       elevation: 10,
       color: 'teal',
       rgb: '',
-      rev: ''
+      rev: '',
+      curColor: '',
+      myColor: ''
     }
   },
-  created () {
-    this.$nextTick(() => {
-      document.getElementById('result-btn').classList.remove('v-btn--disabled')
-    })
-  },
   methods: {
+    onColor () {
+      const hexColorString = document.getElementById('html5colorpicker').value
+      const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hexColorString)
+      if (result) {
+        this.myColor.r = parseInt(result[1], 16)
+        this.myColor.g = parseInt(result[2], 16)
+        this.myColor.b = parseInt(result[3], 16)
+      }
+      this.curColor = this.myColor
+      console.log(this.curColor)
+    },
     rgb2hex () {
       const x = this.rgb.match(/^rgba?[\s+]?\([\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?,[\s+]?(\d+)[\s+]?/i)
       return (x && x.length === 4) ? '#' + ('0' + parseInt(x[1], 10).toString(16)).slice(-2) +
@@ -94,8 +114,7 @@ export default {
 
 <style lang="css" scoped>
 #miain-sheet {
-  height: 100%;
-  width: 100%;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -130,6 +149,13 @@ export default {
   background: #212121;
   margin: 0px 0px 0px 1px;
   cursor: auto
+}
+
+#copy-btn {
+  height: 60px;
+  width: 88px;
+  background: #212121;
+  margin: 0px 0px 0px 1px;
 }
 
 #result-btn:hover {

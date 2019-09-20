@@ -1,14 +1,30 @@
 <template>
   <v-layout id="mailPage" row wrap justify-center>
-    <Mail />
+    <xyzMail
+      v-for="item in mail"
+      :id="item.id"
+      :key="item.id"
+      :class="item.styling"
+    />
   </v-layout>
 </template>
 
 <script>
-import Mail from '~/components/xyzMail/xyzMail.vue'
+import xyzMail from '~/components/xyzMail/xyzMail.vue'
 export default {
   components: {
-    Mail
+    xyzMail
+  },
+  data: () => {
+    return {
+      mail: [
+        {
+          id: 0,
+          styling: 'xs11 sm9 md6 lg4'
+        }
+
+      ]
+    }
   },
   head () {
     return {

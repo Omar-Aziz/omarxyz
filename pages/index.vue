@@ -13,7 +13,7 @@
                   {{ tag }}
                 </span>
               </v-card-title>
-              <v-card-text style="font-size: 1.5rem" v-text="tweet" />
+              <v-card-text style="font-size: 1.5rem; padding: 0px 10px 0px 10px" v-text="tweet" />
               <v-card-actions>
                 <v-list-tile class="grow">
                   <v-list-tile-avatar color="grey darken-3">
@@ -74,7 +74,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="css" scoped>
 .mainDiv {
   height: 100%;
   width: 100%;
@@ -92,6 +92,8 @@ export default {
   height: 100%;
   width: 100%;
   border-radius: 1px;
+  padding-top: 50px;
+
 }
 
 .topCard:hover {

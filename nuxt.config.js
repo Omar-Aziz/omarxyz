@@ -46,7 +46,7 @@ module.exports = {
       },
       {
         rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css?family=Ubuntu'
+        href: 'https://fonts.googleapis.com/css?family=Exo|Poppins:300,400&display=swap'
       }
     ]
   },

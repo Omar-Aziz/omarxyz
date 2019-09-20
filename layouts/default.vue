@@ -15,12 +15,24 @@ export default {
   components: {
     xyzHeader,
     xyzFooter
-  }
+  },
+  methods: {}
 }
 </script>
-<style>
-.theme--dark.v-dialog .v-dialog {
-  box-shadow: none !important;
-  width: 10px;
+<style lang="css" scoped>
+html{
+  height: 100%;
+}
+body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    cursor: none;
+}
+#canvas{
+    background-color: #2c343f;
+    width: 100%;
+    height: 100%;
 }
 </style>

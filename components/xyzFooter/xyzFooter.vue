@@ -1,19 +1,28 @@
 <template>
-  <v-bottom-nav id="bottom-nav" app :active.sync="active" :height="height" :value="true">
-    <div>
-      <v-dialog v-model="dialog" class="dialog" transition="dialog-bottom-transition" style="box-shadow: 100px !important">
-        <template v-slot:activator="{ on }">
-          <v-btn v-on="on">
-            {{ text }}
-            <v-icon color="pink">
-              {{ icon }}
-            </v-icon>
-          </v-btn>
-        </template>
-        <xyzMail id="container" />
-      </v-dialog>
-    </div>
-  </v-bottom-nav>
+  <div>
+    <v-bottom-nav
+      id="bottom-nav"
+      app
+      :active.sync="active"
+      :height="height"
+      :value="true"
+    >
+      <v-btn @click.stop="dialog = true">
+        {{ text }}
+        <v-icon color="pink">
+          {{ icon }}
+        </v-icon>
+      </v-btn>
+    </v-bottom-nav>
+    <v-dialog v-model="dialog" transition="dialog-bottom-transition" width="400" :hide-overlay="false" :scrollable="false">
+      <xyzMail
+        v-for="item in mail"
+        :id="item.id"
+        :key="item.id"
+        :styling="item.class"
+      />
+    </v-dialog>
+  </div>
 </template>
 
 <script>
@@ -28,10 +37,18 @@ export default {
       text: 'comment/share/hit the like btn/subscribe',
       height: '58%',
       dialog: false,
-      icon: 'mail'
+      icon: 'mail',
+      mail: [
+        {
+          id: 0,
+          class: 'x'
+        }
+      ]
     }
   }
 }
+// ZBEDWZ
+// SEPTSAVE19
 </script>
 
 <style lang="css" scoped>
@@ -43,6 +60,7 @@ export default {
 
 #container {
   margin: 0 auto;
+  width: 50px;
   box-shadow: 2rem 5rem 999rem rgba(0, 0, 0, 1);
 }
 </style>

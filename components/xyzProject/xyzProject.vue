@@ -2,7 +2,7 @@
   <v-flex xs12 sm8 md6 xl4>
     <v-hover>
       <v-card id="card" slot-scope="{ hover }" :class="`elevation-${hover ? 12 : 2}`">
-        <v-img id="img" :src="img" contain />
+        <v-img id="img" :src="img" />
         <v-card-actions>
           <v-btn v-if="src[0] === '/'" class="btn" flat nuxt :to="src">
             {{ name }}
@@ -16,6 +16,10 @@
           >
             {{ name }}
           </v-btn>
+          <v-icon v-if="icon == true" style="margin-left: 10px">
+            build
+          </v-icon>
+
           <v-spacer />
           <v-btn icon @click="show = !show">
             <v-icon>{{ show ? 'keyboard_arrow_down' : 'keyboard_arrow_up' }}</v-icon>
@@ -44,6 +48,10 @@ export default {
     name: {
       type: String,
       required: true
+    },
+    icon: {
+      type: Boolean,
+      default: false
     },
     img: {
       type: String,
@@ -105,6 +113,5 @@ export default {
 
 #img {
   height: 305px;
-  width: 100%
 }
 </style>
