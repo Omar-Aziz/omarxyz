@@ -20,10 +20,11 @@
             solo
             filled
             auto-grow
+            :no-resize="true"
             rows="2"
             :value="rgb"
           />
-          <v-btn id="input-btn" ripple @click="hexIt">
+          <v-btn id="input-btn" ripple @click.stop="hexIt">
             <h3>Hex it</h3>
           </v-btn>
         </div>
@@ -46,13 +47,17 @@
           <v-textarea
             id="rev"
             v-model="rev"
-            clearable
-            outlined
+            :disabled="!rev"
             :value="rev"
+            :maxlength="max"
+            :no-resize="true"
+            class="form-control"
+            type="text"
+            readonly
+            outlined
             solo
-            flat
-            filled
             auto-grow
+            filled
             rows="2"
           />
         </div>
@@ -77,6 +82,7 @@ export default {
       color: 'teal',
       rgb: '',
       rev: '',
+      max: 7,
       curColor: '',
       myColor: ''
     }
@@ -126,7 +132,15 @@ export default {
   overflow: auto;
 }
 
-#input-div, #output-div {
+#input-div {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin: 0 auto
+}
+
+#output-div {
   width: 60%;
   display: flex;
   justify-content: center;
@@ -144,7 +158,7 @@ export default {
 }
 
 #result-btn {
-  height: 60px;
+  height: 60.495px;
   width: 88px;
   background: #212121;
   margin: 0px 0px 0px 1px;
@@ -152,7 +166,7 @@ export default {
 }
 
 #copy-btn {
-  height: 60px;
+  height: 60.495px;
   width: 88px;
   background: #212121;
   margin: 0px 0px 0px 1px;

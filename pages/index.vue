@@ -84,7 +84,7 @@ export default {
 .topCard {
   /* background-image: url("/flowers.jpg"); */
   background: rgba(0, 0, 0, 0);
-  background-size: cover;
+  /* background-size: cover; */
   opacity: 0.95;
   box-shadow: 1rem 0.2rem 0.8rem 0.7rem rgba(0, 0, 0, 0.5);
   justify-content: center;
