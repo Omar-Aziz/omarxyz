@@ -4,7 +4,7 @@
       <v-container text-xs-center>
         <v-layout align-start>
           <v-flex>
-            <v-card class="mx-auto childCard" color="#1b95e0" dark max-width="420">
+            <v-card class="mx-auto childCard" color="#1b95e0" dark max-width="420" min-width="300">
               <v-card-title>
                 <v-icon large left>
                   {{ tweetIcons.twitter }}
@@ -82,9 +82,7 @@ export default {
 
 /* display: flex to center errything */
 .topCard {
-  /* background-image: url("/flowers.jpg"); */
   background: rgba(0, 0, 0, 0);
-  /* background-size: cover; */
   opacity: 0.95;
   box-shadow: 1rem 0.2rem 0.8rem 0.7rem rgba(0, 0, 0, 0.5);
   justify-content: center;

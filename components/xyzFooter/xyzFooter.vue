@@ -7,7 +7,7 @@
       :value="true"
       :color="color1"
     >
-      <div v-for="(item, i) in icons" :key="i">
+      <div v-for="(item, i) in items" :key="i">
         <v-btn v-if="item.to.length === 0" @click.stop="dialog = true">
           <v-icon :color="color2">
             {{ item.icon }}
@@ -32,10 +32,8 @@
       :hide-overlay="false"
     >
       <xyzMail
-        v-for="item in mail"
-        :id="item.id"
-        :key="item.id"
-        :styling="item.class"
+        :id=" xyzMailProps.id"
+        :styling="xyzMailProps.class"
       />
     </v-dialog>
   </v-card>
@@ -48,10 +46,6 @@ export default {
     xyzMail
   },
   props: {
-    // id: {
-    //   type: Number,
-    //   required: true
-    // }
     color1: {
       type: String,
       required: true
@@ -67,7 +61,7 @@ export default {
       text: 'comment/share/hit the like btn/subscribe',
       height: '58%',
       dialog: false,
-      icons: [
+      items: [
         {
           title: 'Mail',
           icon: 'mail',
@@ -79,20 +73,17 @@ export default {
           to: 'https://github.com/omar-aziz'
         }
       ],
-      mail: [
-        {
-          id: 0,
-          class: 'x'
-        }
-      ]
+      xyzMailProps: {
+        id: 0,
+        class: ''
+      }
+
     }
   },
   mounted () {
-    console.log('Here', Object.values(this.icons)[0].to.length)
+    console.log('Here', Object.values(this.items)[0].to.length)
   }
 }
-// ZBEDWZ
-// SEPTSAVE19
 </script>
 
 <style lang="css" scoped>
@@ -101,7 +92,10 @@ export default {
   margin: 0 auto;
   text-align: center;
   width: 100%;
-  padding: 0px 400px 0px 400px
+}
+
+.v-item-group > * {
+  flex: 0
 }
 
 #bottom-nav:hover {

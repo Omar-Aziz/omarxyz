@@ -36,9 +36,9 @@
 
     <v-toolbar
       id="toolbar"
+      app
       flat
       fixed
-      app
       :color="color1"
       :clipped-left="false"
     >
@@ -126,20 +126,8 @@ export default {
 </script>
 
 <style lang="css" scoped>
-/* #navigation-drawer, #toolbar {
-  background-color: rgb(21, 26, 34);
-} */
-/* #navigation-drawer {
-  background-color: rgb(21, 26, 34);
-} */
-
-/* #navigation-drawer:hover, #toolbar:hover {
-  background-color: rgb(18, 22, 29);
-  border-radius: 1px;
-} */
-
 .list-tile {
-  background: linear-gradient(30deg, #f5792bd0, #e94057, #8a2323);
+  /* background: linear-gradient(30deg, #1A202C, #1A202C, #1A202C); */
   padding: 5px 0px 5px 0px;
 }
 

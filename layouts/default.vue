@@ -44,8 +44,8 @@ export default {
   methods: {
     parentSwitcher () {
       const theme = this.app === '#1A202C'
-        ? (this.app = '#FDFDFD',
-        this.theme1 = 'rgb(204, 204, 204)',
+        ? (this.app = '#3c6f9c',
+        this.theme1 = '#FDFDFD',
         this.theme2 = '#1A202C')
         : (this.app = '#1A202C',
         this.theme1 = 'rgb(21, 26, 34)',
@@ -65,7 +65,7 @@ body {
   height: 100%;
   overflow: hidden;
   cursor: none;
-  background-color: rgb(204, 204, 204);
+  background-color: #1A202C;
 }
 
 .theme--dark.application {
