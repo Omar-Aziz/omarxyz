@@ -17,7 +17,6 @@
               :to="yang.donate"
               target="_blank"
               rel="noopener noreferrer"
-              class="trans"
             >
               {{ yang.donateBtn }}
             </v-btn>

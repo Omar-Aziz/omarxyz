@@ -1,20 +1,35 @@
 <template>
-  <div>
+  <v-card>
     <v-bottom-nav
       id="bottom-nav"
       app
-      :active.sync="active"
       :height="height"
       :value="true"
     >
-      <v-btn @click.stop="dialog = true">
-        {{ text }}
-        <v-icon color="pink">
-          {{ icon }}
-        </v-icon>
-      </v-btn>
+      <div v-for="(item, i) in icons" :key="i">
+        <v-btn v-if="item.to.length === 0" @click.stop="dialog = true">
+          <v-icon>
+            {{ item.icon }}
+          </v-icon>
+        </v-btn>
+        <v-btn
+          v-else
+          :href="item.to"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <v-icon>
+            {{ item.icon }}
+          </v-icon>
+        </v-btn>
+      </div>
     </v-bottom-nav>
-    <v-dialog v-model="dialog" transition="dialog-bottom-transition" width="400" :hide-overlay="false" :scrollable="false">
+    <v-dialog
+      v-model="dialog"
+      transition="dialog-bottom-transition"
+      width="400"
+      :hide-overlay="false"
+    >
       <xyzMail
         v-for="item in mail"
         :id="item.id"
@@ -22,7 +37,7 @@
         :styling="item.class"
       />
     </v-dialog>
-  </div>
+  </v-card>
 </template>
 
 <script>
@@ -37,7 +52,18 @@ export default {
       text: 'comment/share/hit the like btn/subscribe',
       height: '58%',
       dialog: false,
-      icon: 'mail',
+      icons: [
+        {
+          title: 'Mail',
+          icon: 'mail',
+          to: ''
+        },
+        {
+          title: 'GitHub',
+          icon: 'mdi-github-circle',
+          to: 'https://github.com/omar-aziz'
+        }
+      ],
       mail: [
         {
           id: 0,
@@ -45,6 +71,9 @@ export default {
         }
       ]
     }
+  },
+  mounted () {
+    console.log('Here', Object.values(this.icons)[0].to.length)
   }
 }
 // ZBEDWZ
@@ -53,14 +82,16 @@ export default {
 
 <style lang="css" scoped>
 #bottom-nav {
-  background: rgba(0, 0, 0, 0.3);
+  background-color: rgb(21, 26, 34);
   overflow: hidden;
+  margin: 0 auto;
   text-align: center;
+  width: 100%;
+  padding: 0px 400px 0px 400px
 }
 
-#container {
-  margin: 0 auto;
-  width: 50px;
-  box-shadow: 2rem 5rem 999rem rgba(0, 0, 0, 1);
+#bottom-nav:hover {
+  background-color: rgb(18, 22, 29);
 }
+
 </style>

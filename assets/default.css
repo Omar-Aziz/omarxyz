@@ -1,18 +1,6 @@
-/* @import url("https://fonts.googleapis.com/css?family=Press+Start+2P"); */
-/* @import url('https://cdn.materialdesignicons.com/4.4.95/css/materialdesignicons.min.css'); */
+/* * {font-family: 'Exo', sans-serif;  color: #FDFDFD} */
 
-* {font-family: 'Exo', sans-serif;}
-body {
-  background-image: url('/flowers.jpg');
-  background-size: cover;
-	/* margin: 0;
-	width: 100%;
-	height: 100vh;
-  background: linear-gradient(-45deg, #2a082a, #160e1d, #020c11, #000909);
-	background-size: 400% 400%;
-	animation: gradientBG 15s ease infinite; */
-}
-
+/*
 @keyframes gradientBG {
 	0% {
 		background-position: 0% 50%;
@@ -24,47 +12,13 @@ body {
 		background-position: 0% 50%;
 	}
 
-}
+} */
 
-.theme--dark.v-content {
+/* .theme--dark.v-content {
   padding: 100px !important;
 }
 
-.default-gradient-bg {
-  background-image: linear-gradient(to right bottom,
-      #2a082a,
-      #240b28,
-      #1e0d25,
-      #1a0e21,
-      #160e1d,
-      #110e1b,
-      #0d0e19,
-      #0a0e16,
-      #050d14,
-      #020c11,
-      #000b0d,
-      #000909);
-}
-
-.reversed-gradient-bg {
-  background-image: linear-gradient(to left top,
-      #2a082a,
-      #240b28,
-      #1e0d25,
-      #1a0e21,
-      #160e1d,
-      #110e1b,
-      #0d0e19,
-      #0a0e16,
-      #050d14,
-      #020c11,
-      #000b0d,
-      #000909);
-}
-
-.theme--dark.application,
-.v-navigation-drawer .v-list,
-.theme--dark.v-toolbar {
+.v-list{
   background: transparent;
 }
 
@@ -93,4 +47,4 @@ body {
   overflow: hidden;
   height: 100%;
   margin: auto;
-}
+} */

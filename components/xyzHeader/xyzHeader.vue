@@ -31,28 +31,65 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-toolbar id="toolbar" flat fixed app :clipped-left="false">
+    <v-toolbar
+      id="toolbar"
+      flat
+      fixed
+      app
+      :color="toolbarChild"
+      :clipped-left="false"
+    >
       <v-toolbar-side-icon @click="drawer = !drawer" />
       <v-toolbar-title v-text="title" />
       <v-spacer />
+      <v-btn
+        icon
+        @click="childSwitch"
+      >
+        <v-icon :color="iconChild">
+          {{ toolbar.icon }}
+        </v-icon>
+      </v-btn>
     </v-toolbar>
   </div>
 </template>
 
 <script>
 export default {
+  props: {
+    id: {
+      type: Number,
+      required: true
+    },
+    toolbarChild: {
+      type: String,
+      required: true
+    },
+    iconChild: {
+      type: String,
+      required: true
+    },
+    childSwitch: {
+      type: Function,
+      required: true
+    }
+    // method: {
+    //   type: Function,
+    //   default: () => (['rgb(21, 26, 34)', '#FDFDFD'])
+    // }
+  },
   data () {
     return {
+      // childToolbar: this.method()[0],
+      // childIcon: this.method()[1],
+      childToolbar: 'rgb(21, 26, 34)',
+      childIcon: 'FDFDFD',
       clipped: true,
       permanent: false,
       temporary: false,
       drawer: false,
       miniVariant: true,
       width: '',
-      toolbar: {
-        title: null,
-        img: '/self.jpg'
-      },
       items: [
         {
           title: 'Home',
@@ -82,19 +119,35 @@ export default {
           to: '/mailer'
         }
       ],
-      title: 'omaraziz'
+      title: 'omaraziz',
+      toolbar: {
+        title: null,
+        img: '/self.jpg',
+        icon: 'lightbulb'
+      }
     }
   }
+  // mounted () {
+  //   this.$emit('childColor', [this.childToolbar, this.childIcon])
+  // },
+  // methods: {
+  //   emit () {
+  //     this.$emit('childColor', [this.childToolbar, this.childIcon])
+  //   }
+  // }
 }
 </script>
 
 <style lang="css" scoped>
+/* #navigation-drawer, #toolbar {
+  background-color: rgb(21, 26, 34);
+} */
 #navigation-drawer {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgb(21, 26, 34);
 }
 
-#navigation-drawer:hover {
-  background: rgba(8, 1, 5, 0.788);
+#navigation-drawer:hover, #toolbar:hover {
+  background-color: rgb(18, 22, 29);
   border-radius: 1px;
 }
 

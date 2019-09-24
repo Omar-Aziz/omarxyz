@@ -29,20 +29,16 @@
           </v-btn>
         </div>
         <div id="output-div">
-          <div v-if="rev">
-            <button id="copy-btn" color="#212121" @click="copyResult">
-              <h3>
-                COPY
-              </h3>
-            </button>
-          </div>
-          <div v-else>
-            <button id="result-btn" color="#212121">
-              <h3>
-                RESULT
-              </h3>
-            </button>
-          </div>
+          <button v-if="rev" id="copy-btn" color="#212121" @click="copyResult">
+            <h3>
+              COPY
+            </h3>
+          </button>
+          <button v-else id="result-btn" color="#212121">
+            <h3>
+              RESULT
+            </h3>
+          </button>
 
           <v-textarea
             id="rev"
@@ -61,12 +57,6 @@
             rows="2"
           />
         </div>
-        <!-- <div>
-          <v-sheet>
-            Colors
-            <input id="html5colorpicker" type="color" value="#ff0000" @click="onColor">
-          </v-sheet>
-        </div> -->
       </v-sheet>
     </v-layout>
   </v-content>
