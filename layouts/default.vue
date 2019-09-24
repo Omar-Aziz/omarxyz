@@ -1,17 +1,20 @@
 <template>
   <v-app
     dark
-    :style="appColor"
+    :style="`background-color: ${app}`"
   >
     <v-content>
       <xyzHeader
         :id="id"
-        :toolbar-child="switchToolbar"
-        :icon-child="switchIcon"
+        :color1="theme1"
+        :color2="theme2"
         :child-switch="parentSwitcher"
       />
       <nuxt />
-      <xyzFooter />
+      <xyzFooter
+        :color1="theme1"
+        :color2="theme2"
+      />
     </v-content>
   </v-app>
 </template>
@@ -27,21 +30,27 @@ export default {
   data: () => {
     return {
       id: 0,
-      appColor: 'background-color: #1A202C',
-      switchToolbar: 'rgb(21, 26, 34)',
-      switchIcon: '#FDFDFD',
-      result: ''
+      theme: '',
+      app: '',
+      theme1: '',
+      theme2: ''
     }
+  },
+  mounted () {
+    this.app = '#1A202C'
+    this.theme1 = 'rgb(21, 26, 34)'
+    this.theme2 = '#FDFDFD'
   },
   methods: {
     parentSwitcher () {
-      this.result = this.switchToolbar === 'rgb(21, 26, 34)' &&
-      this.switchIcon === '#FDFDFD' &&
-      this.appColor === 'background-color: #1A202C'
-        ? (this.switchToolbar = '#FDFDFD', this.switchIcon = 'rgb(21, 26, 34)',
-        this.appColor = 'background-color: #FDFDFD')
-        : (this.switchToolbar = 'rgb(21, 26, 34)', this.switchIcon = '#FDFDFD',
-        this.appColor = 'background-color: #1A202C')
+      const theme = this.app === '#1A202C'
+        ? (this.app = '#FDFDFD',
+        this.theme1 = 'rgb(204, 204, 204)',
+        this.theme2 = '#1A202C')
+        : (this.app = '#1A202C',
+        this.theme1 = 'rgb(21, 26, 34)',
+        this.theme2 = '#FDFDFD')
+      return theme
     }
   }
 }
@@ -56,7 +65,7 @@ body {
   height: 100%;
   overflow: hidden;
   cursor: none;
-  background-color: #1A202C;
+  background-color: rgb(204, 204, 204);
 }
 
 .theme--dark.application {
@@ -77,7 +86,7 @@ body {
   color: white;
 }
 
-.g-icon {
+.g-theme2 {
   background: linear-gradient(30deg, #f27121, #e94057, #8a2387);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

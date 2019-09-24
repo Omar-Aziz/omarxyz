@@ -7,6 +7,7 @@
       floating
       :width="width"
       app
+      :style="`background-color: ${color1}`"
     >
       <v-list>
         <v-list>
@@ -22,7 +23,9 @@
         </v-list>
         <v-list-tile v-for="(item, i) in items" :key="i" :to="item.to" router exact>
           <v-list-tile-action>
-            <v-icon>{{ item.icon }}</v-icon>
+            <v-icon :style="`color: ${color2}`">
+              {{ item.icon }}
+            </v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
             <v-list-tile-title v-text="item.title" />
@@ -36,17 +39,17 @@
       flat
       fixed
       app
-      :color="toolbarChild"
+      :color="color1"
       :clipped-left="false"
     >
       <v-toolbar-side-icon @click="drawer = !drawer" />
-      <v-toolbar-title v-text="title" />
+      <v-toolbar-title :style="`color: ${color2}`" v-text="title" />
       <v-spacer />
       <v-btn
         icon
         @click="childSwitch"
       >
-        <v-icon :color="iconChild">
+        <v-icon :color="color2">
           {{ toolbar.icon }}
         </v-icon>
       </v-btn>
@@ -61,11 +64,11 @@ export default {
       type: Number,
       required: true
     },
-    toolbarChild: {
+    color1: {
       type: String,
       required: true
     },
-    iconChild: {
+    color2: {
       type: String,
       required: true
     },
@@ -73,17 +76,9 @@ export default {
       type: Function,
       required: true
     }
-    // method: {
-    //   type: Function,
-    //   default: () => (['rgb(21, 26, 34)', '#FDFDFD'])
-    // }
   },
   data () {
     return {
-      // childToolbar: this.method()[0],
-      // childIcon: this.method()[1],
-      childToolbar: 'rgb(21, 26, 34)',
-      childIcon: 'FDFDFD',
       clipped: true,
       permanent: false,
       temporary: false,
@@ -127,14 +122,6 @@ export default {
       }
     }
   }
-  // mounted () {
-  //   this.$emit('childColor', [this.childToolbar, this.childIcon])
-  // },
-  // methods: {
-  //   emit () {
-  //     this.$emit('childColor', [this.childToolbar, this.childIcon])
-  //   }
-  // }
 }
 </script>
 
@@ -142,14 +129,14 @@ export default {
 /* #navigation-drawer, #toolbar {
   background-color: rgb(21, 26, 34);
 } */
-#navigation-drawer {
+/* #navigation-drawer {
   background-color: rgb(21, 26, 34);
-}
+} */
 
-#navigation-drawer:hover, #toolbar:hover {
+/* #navigation-drawer:hover, #toolbar:hover {
   background-color: rgb(18, 22, 29);
   border-radius: 1px;
-}
+} */
 
 .list-tile {
   background: linear-gradient(30deg, #f5792bd0, #e94057, #8a2323);

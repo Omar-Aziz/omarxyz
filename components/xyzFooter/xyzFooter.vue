@@ -5,10 +5,11 @@
       app
       :height="height"
       :value="true"
+      :color="color1"
     >
       <div v-for="(item, i) in icons" :key="i">
         <v-btn v-if="item.to.length === 0" @click.stop="dialog = true">
-          <v-icon>
+          <v-icon :color="color2">
             {{ item.icon }}
           </v-icon>
         </v-btn>
@@ -18,7 +19,7 @@
           rel="noopener noreferrer"
           target="_blank"
         >
-          <v-icon>
+          <v-icon :color="color2">
             {{ item.icon }}
           </v-icon>
         </v-btn>
@@ -45,6 +46,20 @@ import xyzMail from '~/components/xyzMail/xyzMail.vue'
 export default {
   components: {
     xyzMail
+  },
+  props: {
+    // id: {
+    //   type: Number,
+    //   required: true
+    // }
+    color1: {
+      type: String,
+      required: true
+    },
+    color2: {
+      type: String,
+      required: true
+    }
   },
   data: () => {
     return {
@@ -82,7 +97,6 @@ export default {
 
 <style lang="css" scoped>
 #bottom-nav {
-  background-color: rgb(21, 26, 34);
   overflow: hidden;
   margin: 0 auto;
   text-align: center;
