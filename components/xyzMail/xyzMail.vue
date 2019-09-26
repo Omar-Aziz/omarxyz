@@ -1,11 +1,11 @@
 <template>
   <v-flex :class="styling">
     <v-card id="card" hover>
-      <v-toolbar id="toolbar">
-        <v-icon size="35" color="pink">
+      <v-toolbar id="toolbar" :style="`background-color: ${color1}`">
+        <v-icon size="35" :color="color2">
           {{ icons.mail }}
         </v-icon>
-        <v-toolbar-title class="default-gradient-item">
+        <v-toolbar-title :style="`color: ${color2}`">
           {{ toolbarMsg }}
         </v-toolbar-title>
         <v-spacer />
@@ -20,10 +20,10 @@
           :disabled="!verified"
           @submit.prevent="submit"
         >
-          <v-icon v-if="verified" size="35" color="pink" round>
+          <v-icon v-if="verified" size="35" :color="color2" round>
             {{ icons.send }}
           </v-icon>
-          <v-icon v-else size="35" color="pink">
+          <v-icon v-else size="35" :color="color2">
             {{ icons.send_locked }}
           </v-icon>
         </v-btn>
@@ -53,7 +53,7 @@
         hide-details
       />
 
-      <div class="default-gradient-bg">
+      <div class="">
         <v-divider />
         <v-divider />
       </div>
@@ -69,7 +69,7 @@
         hide-details
       />
 
-      <div class="default-gradient-bg">
+      <div class="">
         <v-divider />
         <v-divider />
       </div>
@@ -85,7 +85,7 @@
         auto-grow
       />
 
-      <div class="default-gradient-bg">
+      <div class="">
         <v-divider />
         <v-divider />
       </div>
@@ -93,7 +93,7 @@
       <v-checkbox
         v-model="verified"
         class="checkbox"
-        color="pink darken-4"
+        :color="color2"
         value="agree"
         label="check this first to attach or send mail 💯"
       />
@@ -101,7 +101,7 @@
       <details id="details" open>
         <summary
           v-show="files.length > 0 ? !upload : upload"
-          class="default-gradient-item"
+          :color="color2"
         >
           Attachments
         </summary>
@@ -149,12 +149,21 @@
 
 <script>
 export default {
+  layout: 'default',
   props: {
     id: {
       type: Number,
-      required: true
+      default: 0
     },
     styling: {
+      type: String,
+      default: ''
+    },
+    color1: {
+      type: String,
+      default: ''
+    },
+    color2: {
       type: String,
       default: ''
     }
@@ -232,7 +241,7 @@ export default {
 }
 
 .v-divider {
-  background: rgba(42, 8, 42, 0.9);
+  /* background: rgba(42, 8, 42, 0.9); */
   opacity: 0.2;
 }
 
@@ -240,15 +249,14 @@ export default {
   box-shadow: 0.2rem 0 0.6rem 0.2rem rgba(0, 0, 10, 0.5);
   border-radius: 4px;
   position: relative;
-  background: inherit;
-  background: rgba(0, 0, 0, 0.97);
+  background: rgba(0, 0, 0, 1);
   overflow: hidden;
   height: 100%;
   margin: auto;
 }
 
 #toolbar {
-  background: rgba(20, 0.9, 25, 0.5);
+  /* background: rgba(20, 0.9, 25, 0.5); */
 }
 
 .hideImg {

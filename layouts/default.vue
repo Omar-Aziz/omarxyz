@@ -44,9 +44,9 @@ export default {
   methods: {
     parentSwitcher () {
       const theme = this.app === '#1A202C'
-        ? (this.app = '#3c6f9c',
-        this.theme1 = '#FDFDFD',
-        this.theme2 = '#1A202C')
+        ? (this.app = '#b4c4ae',
+        this.theme1 = '#191919',
+        this.theme2 = '#fcd7c7')
         : (this.app = '#1A202C',
         this.theme1 = 'rgb(21, 26, 34)',
         this.theme2 = '#FDFDFD')

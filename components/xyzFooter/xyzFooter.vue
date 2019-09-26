@@ -33,6 +33,8 @@
     >
       <xyzMail
         :id=" xyzMailProps.id"
+        :color1="color1"
+        :color2="color2"
         :styling="xyzMailProps.class"
       />
     </v-dialog>

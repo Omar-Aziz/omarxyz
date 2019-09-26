@@ -39,10 +39,10 @@
       app
       flat
       fixed
-      :color="color1"
+      :style="color1"
       :clipped-left="false"
     >
-      <v-toolbar-side-icon @click="drawer = !drawer" />
+      <v-toolbar-side-icon :style="`color: ${color2}`" @click="drawer = !drawer" />
       <v-toolbar-title :style="`color: ${color2}`" v-text="title" />
       <v-spacer />
       <v-btn
@@ -106,13 +106,13 @@ export default {
           title: 'Yang',
           icon: 'bubble_chart',
           to: '/yang'
-        },
-
-        {
-          title: 'mailer',
-          icon: 'mail',
-          to: '/mailer'
         }
+
+        // {
+        //   title: 'mailer',
+        //   icon: 'mail',
+        //   to: '/mailer'
+        // }
       ],
       title: 'omaraziz',
       toolbar: {

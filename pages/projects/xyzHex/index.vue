@@ -20,7 +20,6 @@
             solo
             filled
             auto-grow
-            :no-resize="true"
             rows="2"
             :value="rgb"
           />
@@ -42,11 +41,9 @@
 
           <v-textarea
             id="rev"
-            v-model="rev"
             :disabled="!rev"
             :value="rev"
             :maxlength="max"
-            :no-resize="true"
             class="form-control"
             type="text"
             readonly
@@ -96,7 +93,10 @@ export default {
             ('0' + parseInt(x[3], 10).toString(16)).slice(-2) : ''
     },
     hexIt () {
-      this.rev += this.rgb2hex(this.rev)
+      this.rev = this.rgb2hex(this.rev)
+    },
+    newHex (rev) {
+
     },
     copyResult () {
       const copy = document.getElementById('rev')
