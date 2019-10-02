@@ -2,12 +2,12 @@
   <v-container id="top-pad" grid-list-xl text-xs-center>
     <v-layout justify-center row wrap>
       <v-flex xs12 sm10 md10 lg10 xl7>
-        <v-card id="title" text-xs-center>
+        <v-card id="" text-xs-center>
           <h2 v-text="topic" />
         </v-card>
       </v-flex>
       <v-flex xs12 sm10 md10 lg10 xl7>
-        <v-card id="thesis" raised>
+        <v-card raised>
           <v-parallax src="/fn.jpg" :aspect-ratio="aspectRatio" />
 
           <v-btn flat @click="show = !show">
@@ -43,7 +43,6 @@
         >
           <v-card id="stats-card">
             <v-btn
-              id="stats"
               flat
               block
               href="https://plu.mx/plum/a/?bepress_url_id=https%3A%2F%2Fir.uiowa.edu%2Fhonors_theses%2F252"
@@ -63,18 +62,6 @@
       </v-flex>
     </v-layout>
   </v-container>
-  <!-- <iframe
-      src="/thesis.pdf"
-      width="80%"
-      height="80%"
-    >
-      may not show
-    </iframe> -->
-
-  <!-- <a href="https://plu.mx/plum/a/?repo_url=https%3A%2F%2Fir.uiowa.edu%2Fhonors_theses%2F252" data-hide-print="true" class="plumx-summary plum-bigben-theme" data-site="plum" data-hide-socialmedia="true">Nietzsche’s Critique of Morality and Revaluation of Values</a>
-    <object width="88%" height="910px" data="/thesis.pdf">
-      Data loading . . .
-    </object> -->
 </template>
 
 <script>
@@ -146,7 +133,6 @@ export default {
 
 #title {
     padding: 0px 8px 0px 8px;
-    background: rgba(0,0,0,1)
 }
 
 #stats-sheet {
@@ -154,7 +140,6 @@ export default {
 }
 
 #stats-card {
-  background: rgb(236, 236, 236);
   width: 320px;
   padding: 0px 10px 0px 10px;
   margin: 0 auto
@@ -162,17 +147,19 @@ export default {
 
 #stats {
   background: rgba(236, 236, 236, 236);
-  color: black;
+  color: #fff !important;
   font-family: ubuntu;
   min-width: 320px;
   font-size: 16px;
 }
 
+.plum-sciencedirect-theme .PlumX-Summary .pps-label, .plum-bigben-theme .PlumX-Summary .pps-label { color: #fff }
+
 #stats-btn {
   width: 100%;
 }
 #thesis {
-  background: rgba(0,0,0,0.9);
+  background: rgba(0,0,0,0.5);
   height: 100%;
 }
 

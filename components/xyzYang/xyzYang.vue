@@ -2,7 +2,7 @@
   <v-container grid-list-xl text-xs-center>
     <v-layout align-center justify-center>
       <v-flex xs12 sm8 md8 xl7>
-        <v-card id="card">
+        <v-card>
           <v-img src="/yang_crowd.jpg" aspect-ratio="1.95" />
           <v-card-text primary-title class="text-md-center">
             <div>

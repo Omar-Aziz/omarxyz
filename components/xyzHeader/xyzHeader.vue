@@ -7,7 +7,6 @@
       floating
       :width="width"
       app
-      :style="`background-color: ${color1}`"
     >
       <v-list>
         <v-list>
@@ -23,7 +22,7 @@
         </v-list>
         <v-list-tile v-for="(item, i) in items" :key="i" :to="item.to" router exact>
           <v-list-tile-action>
-            <v-icon :style="`color: ${color2}`">
+            <v-icon>
               {{ item.icon }}
             </v-icon>
           </v-list-tile-action>
@@ -39,20 +38,20 @@
       app
       flat
       fixed
-      :style="color1"
       :clipped-left="false"
     >
-      <v-toolbar-side-icon :style="`color: ${color2}`" @click="drawer = !drawer" />
-      <v-toolbar-title :style="`color: ${color2}`" v-text="title" />
+      <v-toolbar-side-icon @click="drawer = !drawer" />
+      <v-toolbar-title v-text="title" />
       <v-spacer />
-      <v-btn
+      <!-- <input id="switch" @click="childSwitch"><label for="switch">Toggle</label> -->
+      <!--  <v-btn
         icon
         @click="childSwitch"
       >
-        <v-icon :color="color2">
+        <v-icon>
           {{ toolbar.icon }}
         </v-icon>
-      </v-btn>
+      </v-btn> -->
     </v-toolbar>
   </div>
 </template>
@@ -60,18 +59,6 @@
 <script>
 export default {
   props: {
-    id: {
-      type: Number,
-      required: true
-    },
-    color1: {
-      type: String,
-      required: true
-    },
-    color2: {
-      type: String,
-      required: true
-    },
     childSwitch: {
       type: Function,
       required: true
@@ -126,6 +113,22 @@ export default {
 </script>
 
 <style lang="css" scoped>
+/* input {
+  height: 0;
+  width: 0;
+  display: hidden
+
+}
+label {
+  cursor: pointer;
+  text-indent: -9999px;
+  width: 52px;
+  height: 27px;
+  background: #fff;
+  float: right;
+  border-radius: 100px;
+  position: relative;
+} */
 .list-tile {
   /* background: linear-gradient(30deg, #1A202C, #1A202C, #1A202C); */
   padding: 5px 0px 5px 0px;

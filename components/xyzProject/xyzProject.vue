@@ -4,12 +4,12 @@
       <v-card id="card" slot-scope="{ hover }" :class="`elevation-${hover ? 12 : 2}`">
         <v-img id="img" :src="img" />
         <v-card-actions>
-          <v-btn v-if="src[0] === '/'" class="btn" flat nuxt :to="src">
+          <v-btn v-if="src[0] === '/'" flat nuxt :to="src">
             {{ name }}
           </v-btn>
           <v-btn
             v-else
-            class="btn"
+            flat
             :href="src"
             target="_blank"
             rel="noopener noreferrer"
@@ -76,39 +76,9 @@ export default {
 </script>
 
 <style lang="css" scoped>
-#card {
-  background-color: rgba(0, 0, 0, 0.7);
-}
-
 #card:hover {
-  background: rgba(8, 1, 5, 1);
+  background: rgba(0, 0, 0, 0.5);
   border-radius: 1px;
-}
-.btn {
-  background: -moz-linear-gradient(
-    100deg,
-    #e94057 0%,
-    #8a2387 100%
-  ); /* ff3.6+ */
-  background: -webkit-gradient(
-    linear,
-    left bottom,
-    right top,
-    color-stop(0%, #e94057),
-    color-stop(100%, #8a2387)
-  ); /* safari4+,chrome */
-  background: -webkit-linear-gradient(
-    100deg,
-    #e94057 0%,
-    #8a2387 100%
-  ); /* safari5.1+,chrome10+ */
-  background: -o-linear-gradient(
-    50deg,
-    #e94057 0%,
-    #8a2387 100%
-  ); /* opera 11.10+ */
-  background: -ms-linear-gradient(50deg, #e94057 0%, #8a2387 100%); /* ie10+ */
-  background: linear-gradient(40deg, #e94057 0%, #8a2387 100%); /* w3c */
 }
 
 #img {

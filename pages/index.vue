@@ -1,130 +1,34 @@
 <template>
-  <div class="mainDiv">
-    <v-card class="topCard">
-      <v-container text-xs-center>
-        <v-layout align-start>
-          <v-flex>
-            <v-card class="mx-auto childCard" color="#1b95e0" dark max-width="420" min-width="300">
-              <v-card-title>
-                <v-icon large left>
-                  {{ tweetIcons.twitter }}
-                </v-icon>
-                <span class="title font-weight-bold">
-                  {{ tag }}
-                </span>
-              </v-card-title>
-              <v-card-text style="font-size: 1.5rem; padding: 0px 10px 0px 10px" v-text="tweet" />
-              <v-card-actions>
-                <v-list-tile class="grow">
-                  <v-list-tile-avatar color="grey darken-3">
-                    <v-img left class="elevation-6" :src="img" />
-                  </v-list-tile-avatar>
-                  <v-list-tile-content>
-                    <v-list-tile-title>{{ name }}</v-list-tile-title>
-                  </v-list-tile-content>
-
-                  <v-layout align-center justify-end>
-                    <v-btn icon flat depressed class="heart" to="/fun">
-                      <v-icon color="red">
-                        {{ tweetIcons.heart }}
-                      </v-icon>
-                    </v-btn>
-                    <span class="subheading mr-2">{{ stats[0] }}</span>
-                    <span class="mr-1" style="color: #1b95e0">·</span>
-                    <v-btn icon flat depressed class="share">
-                      <v-icon color="green accent-3">
-                        {{ tweetIcons.share }}
-                      </v-icon>
-                    </v-btn>
-                    <span class="subheading">{{ stats[1] }}</span>
-                  </v-layout>
-                </v-list-tile>
-              </v-card-actions>
-            </v-card>
-          </v-flex>
-        </v-layout>
-      </v-container>
+  <v-flex align-center justify-center>
+    <v-card flat>
+      <v-divider />
+      <h1>Omar Aziz</h1>
+      <h2>software developer</h2>
+      <h2>former infant</h2>
+      <h3>click on the top left to explore this site</h3>
+      <v-divider />
     </v-card>
-  </div>
+  </v-flex>
 </template>
 
 <script>
 export default {
-  data: () => ({
-    img: '/self.jpg',
-    name: 'Omar',
-    tag: 'Twitter',
-    nuxtjs: 'https://nuxtjs.org',
-    tweet:
-      `Personal site where I showcase my portfolio,
-      projects I've worked on, and most importantly apply modern web technologies and skills.
-      Currently I'm focusing on SSR`,
-    tweetIcons: {
-      twitter: 'mdi-twitter',
-      heart: 'mdi-heart',
-      share: 'share'
-    },
-    stats: [345, 67]
-  }),
-  head () {
-    return {
-      title: 'Home'
-    }
-  }
+
 }
 </script>
 
 <style lang="css" scoped>
-.mainDiv {
-  height: 100%;
-  width: 100%;
+.v-card {
+  background: transparent;
+  margin: 80px 30px 0px 30px;
 }
 
-/* display: flex to center errything */
-.topCard {
-  background: rgba(0, 0, 0, 0);
-  opacity: 0.95;
-  box-shadow: 1rem 0.2rem 0.8rem 0.7rem rgba(0, 0, 0, 0.5);
-  justify-content: center;
-  margin: 0 auto;
-  height: 100%;
-  width: 100%;
-  border-radius: 1px;
-  padding-top: 50px;
-
-}
-
-.topCard:hover {
-  box-shadow: 0.8rem 0.5rem 0.6rem 0.8rem rgba(0, 0, 0, 0.3);
-  opacity: 1;
-}
-
-.childCard {
-  box-shadow: 0 0.8rem 0.8rem 0.7rem rgba(0, 0, 10, 0.3);
-}
-
-.childCard:hover {
-  box-shadow: 0 0.8rem 0.8rem 0.7rem rgba(0, 0, 10, 0.1);
-  opacity: 1;
-}
-
-.v-divider {
-  background: rgba(42, 8, 42, 0.9);
-  opacity: 1;
-}
-.heart::before {
-  color: transparent;
-}
-
-.heart:hover {
-  color: #e0245e;
-}
-
-.share::before {
-  color: transparent;
-}
-
-.share:hover {
-  color: #1bc768;
+h1, h2, h3 { padding-left: 15px; color: #dfdfdf }
+h1 {
+  font-size: 90px;
+  font-size:calc(100% + 8vw);
+  font-weight: bolder;
+  letter-spacing: 0.5rem;
+  color: #c3b6a3
 }
 </style>

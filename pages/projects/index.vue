@@ -30,7 +30,7 @@ export default {
           image: '/hex.jpg',
           icon: true,
           source: '/projects/xyzHex',
-          summary: 'Convert RGB(a) colors to hex colors (example: rgba(0,0,0,0) to #000000'
+          summary: 'Convert RGB(a) colors to hex colors (Work in progress)'
 
         },
         {
@@ -38,7 +38,9 @@ export default {
           name: 'Temple Body Arts',
           image: '/temple.jpg',
           source: 'https://temple-body-arts.com',
-          summary: 'Almost Body Arts is a popular tattoo shop located downtown of Iowa City'
+          summary: `Almost Body Arts is a popular tattoo shop located downtown of Iowa City.
+                    They have been around for many years and their work is well known in the community.
+                    Feel free to look them up on social media too`
 
         },
         {
@@ -46,15 +48,24 @@ export default {
           name: 'Almost Paradise',
           image: '/paradise.jpg',
           source: 'https://almostparadise-ic.com',
-          summary: 'Almost Paradise is a smoke shop located in Iowa City'
+          summary: `Almost Paradise is a smoke shop located in Iowa City that provides a variety of products at competeing prices.
+                    Almost Paradise does deliveries too!`
 
+        },
+        {
+          id: 4,
+          name: 'Dog Tinder',
+          image: '/dogg.jpg',
+          icon: true,
+          source: 'https://dawg.netlify.com/',
+          summary: 'Showing the power of Axios.js - this is a Tinder like app but for Dogs (Work in progress)'
         },
         {
           id: 1,
           name: 'Tattos By Nikki',
           image: '/nikki.jpg',
           source: 'https://tattoosbynikki.com',
-          summary: 'Nikki is a tattoo artist based in Iowa City. She wroks at & owns Temple Body Arts located next to the Iowa City Public Library'
+          summary: 'Nikki is a tattoo artist based in Iowa City. She works at & owns Temple Body Arts located next to the Iowa City Public Library'
 
         }
       ]

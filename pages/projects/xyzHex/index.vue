@@ -2,11 +2,10 @@
   <v-content>
     <v-layout justify-center>
       <v-sheet
-        id="main-sheet"
+        class="main-sheet"
         :height="height"
         :width="width"
         :elevation="elevation"
-        :color="color"
       >
         <h1>Hex Yeah﹗</h1>
         <p>convert RGB(a) to Hex</p>
@@ -28,11 +27,11 @@
           </v-btn>
         </div>
         <div id="output-div">
-          <button v-if="rev" id="copy-btn" color="#212121" @click="copyResult">
+          <v-btn v-if="rev" id="copy-btn" color="#212121" @click="copyResult">
             <h3>
               COPY
             </h3>
-          </button>
+          </v-btn>
           <button v-else id="result-btn" color="#212121">
             <h3>
               RESULT
@@ -63,7 +62,7 @@
 export default {
   data: () => {
     return {
-      height: 650,
+      height: 300,
       width: 600,
       elevation: 10,
       color: 'teal',
@@ -109,11 +108,12 @@ export default {
 </script>
 
 <style lang="css" scoped>
-#miain-sheet {
+.theme--dark.v-sheet, .v-input__slot {
+  background: #4b6cb7;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #182848, hsl(220, 24%, 10%));  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #182848, hsl(220, 24%, 10%)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border-radius: 5px
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 #result-sheet {
@@ -148,7 +148,7 @@ export default {
 }
 
 #result-btn {
-  height: 60.495px;
+  height: 61.7px;
   width: 88px;
   background: #212121;
   margin: 0px 0px 0px 1px;

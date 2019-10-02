@@ -59,7 +59,7 @@ module.exports = {
 
   css: [ '~assets/default.css', '~assets/transition.css' ],
   plugins: [],
-  modules: [ '@nuxtjs/vuetify', '@nuxtjs/sitemap' ],
+  modules: [ '@nuxtjs/vuetify', '@nuxtjs/sitemap', '@nuxtjs/axios' ],
   sitemap: {
     hostname: 'https://omaraziz.xyz',
     gzip: true,
@@ -76,6 +76,7 @@ module.exports = {
       success: colors.green.accent3
     }
   },
+  axios: {},
   build: {
     extend (config, ctx) {}
   }

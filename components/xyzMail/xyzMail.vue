@@ -1,11 +1,11 @@
 <template>
   <v-flex :class="styling">
     <v-card id="card" hover>
-      <v-toolbar id="toolbar" :style="`background-color: ${color1}`">
-        <v-icon size="35" :color="color2">
+      <v-toolbar>
+        <v-icon size="35">
           {{ icons.mail }}
         </v-icon>
-        <v-toolbar-title :style="`color: ${color2}`">
+        <v-toolbar-title>
           {{ toolbarMsg }}
         </v-toolbar-title>
         <v-spacer />
@@ -20,7 +20,7 @@
           :disabled="!verified"
           @submit.prevent="submit"
         >
-          <v-icon v-if="verified" size="35" :color="color2" round>
+          <v-icon v-if="verified" size="35" round>
             {{ icons.send }}
           </v-icon>
           <v-icon v-else size="35" :color="color2">
@@ -253,10 +253,6 @@ export default {
   overflow: hidden;
   height: 100%;
   margin: auto;
-}
-
-#toolbar {
-  /* background: rgba(20, 0.9, 25, 0.5); */
 }
 
 .hideImg {
