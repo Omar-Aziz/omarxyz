@@ -25,15 +25,6 @@ export default {
     return {
       projects: [
         {
-          id: 0,
-          name: 'Hex Yeah!',
-          image: '/hex.jpg',
-          icon: true,
-          source: '/projects/xyzHex',
-          summary: 'Convert RGB(a) colors to hex colors (Work in progress)'
-
-        },
-        {
           id: 3,
           name: 'Temple Body Arts',
           image: '/temple.jpg',
@@ -41,15 +32,6 @@ export default {
           summary: `Almost Body Arts is a popular tattoo shop located downtown of Iowa City.
                     They have been around for many years and their work is well known in the community.
                     Feel free to look them up on social media too`
-
-        },
-        {
-          id: 2,
-          name: 'Almost Paradise',
-          image: '/paradise.jpg',
-          source: 'https://almostparadise-ic.com',
-          summary: `Almost Paradise is a smoke shop located in Iowa City that provides a variety of products at competeing prices.
-                    Almost Paradise does deliveries too!`
 
         },
         {
@@ -61,11 +43,29 @@ export default {
           summary: 'Showing the power of Axios.js - this is a Tinder like app but for Dogs (Work in progress)'
         },
         {
+          id: 2,
+          name: 'Almost Paradise',
+          image: '/paradise.jpg',
+          source: 'https://almostparadise-ic.com',
+          summary: `Almost Paradise is a smoke shop located in Iowa City that provides a variety of products at competeing prices.
+                    Almost Paradise does deliveries too!`
+
+        },
+        {
           id: 1,
           name: 'Tattos By Nikki',
           image: '/nikki.jpg',
           source: 'https://tattoosbynikki.com',
           summary: 'Nikki is a tattoo artist based in Iowa City. She works at & owns Temple Body Arts located next to the Iowa City Public Library'
+
+        },
+        {
+          id: 0,
+          name: 'Hex Yeah!',
+          image: '/hex.jpg',
+          icon: true,
+          source: '/projects/xyzHex',
+          summary: 'Convert RGB(a) colors to hex colors (Work in progress)'
 
         }
       ]
@@ -78,9 +78,6 @@ export default {
     //   if (this.$vuetify.breakpoint.mdAndUp) { binding.row = true }
     //   return binding
     // }
-  },
-  mounted () {
-    // console.log(this.projects[0].source.substr(0, 5))
   },
   head () {
     return {
