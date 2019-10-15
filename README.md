@@ -1,5 +1,5 @@
 
-# [:link: omaraziz.xyz](https://omarxyz.xyz)
+# [:link: omaraziz.xyz](https://omaraziz.xyz)
 
 
 
