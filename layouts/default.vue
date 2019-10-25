@@ -44,6 +44,7 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
+  background: RGB(11, 18, 26)
 }
 
 :root {
