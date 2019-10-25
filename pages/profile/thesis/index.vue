@@ -42,21 +42,21 @@
           width="100%"
         >
           <v-card id="stats-card">
-            <v-btn
+            <button
+              id="stats-btn"
               flat
               block
+              ripple
               href="https://plu.mx/plum/a/?bepress_url_id=https%3A%2F%2Fir.uiowa.edu%2Fhonors_theses%2F252"
               data-hide-print="true"
-              class="plumx-summary plum-bigben-theme"
               data-site="plum"
               data-hide-when-empty="true"
               data-hide-socialmedia="true"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               Check Paper Metrics
-              <v-icon right size="22" color="black">
-                mdi-chart-line-stacked
-              </v-icon>
-            </v-btn>
+            </button>
           </v-card>
         </v-sheet>
       </v-flex>
@@ -104,7 +104,8 @@ export default {
       icons: {
         down: 'keyboard_arrow_down',
         up: 'keyboard_arrow_up',
-        page: 'mdi-book-open-page-variant'
+        page: 'mdi-book-open-page-variant',
+        stats: 'mdi-chart-line-stacked'
       }
     }
   },
@@ -142,22 +143,21 @@ export default {
 #stats-card {
   width: 320px;
   padding: 0px 10px 0px 10px;
-  margin: 0 auto
+  margin: 0 auto;
+  background: rgb(228, 228, 228);
 }
-
-#stats {
-  background: rgba(236, 236, 236, 236);
-  color: #fff !important;
-  font-family: ubuntu;
-  min-width: 320px;
-  font-size: 16px;
-}
-
-.plum-sciencedirect-theme .PlumX-Summary .pps-label, .plum-bigben-theme .PlumX-Summary .pps-label { color: #fff }
 
 #stats-btn {
-  width: 100%;
+  color: #000;
+  background-color: transparent;
+  height: 40px;
+  width: 100%
 }
+
+#stats-icon {
+  color: #000 !important
+}
+
 #thesis {
   background: rgba(0,0,0,0.5);
   height: 100%;

@@ -8,7 +8,7 @@
       <h3>click on the top left to explore this site</h3>
       <br>
       <v-divider />
-      <v-row justify="center">
+      <v-flex justify="center">
         <v-dialog
           v-model="dialog"
           transition="dialog-bottom-transition"
@@ -16,7 +16,7 @@
           :hide-overlay="false"
         >
           <template v-slot:activator="{ on }">
-            <span style="font-size: 17.5px; font-weight: 700; color: #dfdfdf ">&nbsp;&nbsp;&nbsp;connect</span>
+            <span id="connect">connect</span>
             <v-btn icon v-on="on">
               <v-icon style="">
                 mail
@@ -30,7 +30,7 @@
             />
           </v-card>
         </v-dialog>
-      </v-row>
+      </v-flex>
     </v-card>
   </v-flex>
 </template>
@@ -71,5 +71,12 @@ h1 {
 
 .v-item-group > * {
   flex: 0
+}
+
+#connect {
+  font-size: 17.5px;
+  font-weight: 700;
+  color: #dfdfdf;
+  padding: 0px 0px 0px 15px
 }
 </style>
