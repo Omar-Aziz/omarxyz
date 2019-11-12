@@ -1,9 +1,23 @@
 const express = require('express')
 const nodemailer = require('nodemailer')
+const { google } = require('googleapis')
+const OAuth2 = google.auth.OAuth2
 const bodyParser = require('body-parser')
 const multer = require('multer')
 const config = require('../nuxt.config.js')
 const time = require('./middleware/time')
+
+const oauth2Client = new OAuth2(
+  process.env.CLIENT_ID,
+  process.env.CLIENT_SECRET,
+  process.env.REDIRECT_URL
+)
+
+oauth2Client.setCredentials({
+  refresh_token: process.env.REFRESH_TOKEN
+})
+
+const accessToken = oauth2Client.getAccessToken()
 
 config.dev = !(process.env.NODE_ENV === 'production')
 
@@ -44,8 +58,13 @@ const up = multer({
 const transporter = nodemailer.createTransport({
   service: process.env.NODEMAILER_SERVICE,
   auth: {
+    type: 'OAuth2',
     user: process.env.NODEMAILER_USER,
-    pass: process.env.NODEMAILER_PASS
+    clientId: process.env.CLIENT_ID,
+    clientSecret: process.env.CLIENT_SECRET,
+    refreshToken: process.env.REFRESH_TOKEN,
+    accessToken
+    // pass: process.env.NODEMAILER_PASS
   }
 })
 

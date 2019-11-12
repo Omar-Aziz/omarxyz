@@ -28,7 +28,7 @@ export default {
   data: () => {
     return {
       check: '✔︎',
-      result: 'Success 💯',
+      result: 'Success',
       msg: 'Your email has been sent. I will get back to you whenever I feel like it',
       direct: 'Go Home',
       200: '200'
@@ -56,7 +56,7 @@ export default {
 .mainDiv {
   height: 100%;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.1);
 }
 #succ {
   padding: 0rem;
@@ -76,8 +76,5 @@ export default {
 }
 .home:hover {
   text-shadow: 0 0 100px;
-  /* animation-name: blink;
-  animation-duration: 0.8s;
-  animation-iteration-count: infinite; */
 }
 </style>
