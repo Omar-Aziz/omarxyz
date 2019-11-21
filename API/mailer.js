@@ -7,11 +7,7 @@ const multer = require('multer')
 const config = require('../nuxt.config.js')
 const time = require('./middleware/time')
 
-const oauth2Client = new OAuth2(
-  process.env.CLIENT_ID,
-  process.env.CLIENT_SECRET,
-  process.env.REDIRECT_URL
-)
+const oauth2Client = new OAuth2(process.env.CLIENT_ID, process.env.CLIENT_SECRET, process.env.REDIRECT_URL)
 
 oauth2Client.setCredentials({
   refresh_token: process.env.REFRESH_TOKEN
@@ -51,9 +47,7 @@ const storage = multer.diskStorage({
     cb(null, `${file.fieldname}-${time()}`)
   }
 })
-const up = multer({
-  storage
-})
+const up = multer({ storage })
 
 const transporter = nodemailer.createTransport({
   service: process.env.NODEMAILER_SERVICE,
@@ -64,67 +58,54 @@ const transporter = nodemailer.createTransport({
     clientSecret: process.env.CLIENT_SECRET,
     refreshToken: process.env.REFRESH_TOKEN,
     accessToken
-    // pass: process.env.NODEMAILER_PASS
   }
 })
 
-mailer.post('/send-email', up.array('img'), (req, res) => {
-  const data = req.body
+mailer.post('/send-email', up.array('img'), (request, response) => {
+  const data = request.body
 
   // if user uploads multiple images, push them to toUpload
   // and assign a name + path for each
   const toUpload = []
-  for (const item in req.files) {
+  for (const item in request.files) {
     toUpload.push({
-      filename: req.files[item].originalname,
-      path: req.files[item].path
+      filename: request.files[item].originalname,
+      path: request.files[item].path
     })
-  };
+  }
 
-  const attachmentNotify =
-    toUpload.length > 0 ? `*${data.name} included photos with this email.` : ''
+  const attachmentNotify = toUpload.length > 0 ? `*${data.name} included photos with this email.` : ''
 
   const mailOptions = {
-    from: `<${data.email}>`,
+    from: data.email,
+    replyTo: data.email,
     to: process.env.NODEMAILER_USER,
-    subject: `Site: from ${data.name}`,
-    html: `
-          Sender's name:
-          <b>${data.name}</b><br/>
-          Sender's email:
-          <b>${data.email}</b><br/>
-          <br/>Sender's message:<br/>
-          <br/>${data.msg}
-          <br/><br/>
-          <em>${attachmentNotify}</em>
-          <br/>
-          `,
-    attachments: toUpload
+    subject: `omaraziz.xyz: ${data.name}`,
+    attachments: toUpload,
+    html: `Email: ${data.email}<br/>
+    <br/>${data.msg}<br/><br/>
+    <em>${attachmentNotify}</em>`
   }
 
-  console.log(attachmentNotify)
-  // console.log(toUpload);
   // To verify if transporter is working
-  // transporter.verify((err, success) => {
-  //     if (err) console.log(`Verify error: ${err}`);
-  //     console.log('Config is valid');
-  // })
-
-  transporter.sendMail(mailOptions, (err, req, res, next) => {
-    if (err) {
-      console.log(`Caught during email transportation: ${err}`)
-    } else {
-      console.log(`Success, email was send to ${mailOptions.to}`)
+  toUpload.length > 0 ? console.log(attachmentNotify) : console.log('No attachments')
+  transporter.verify((error, success) => {
+    if (error) {
+      console.log(`Configuration error: ${error}`)
     }
+    console.log(`Configuration valid: ${success}`)
+    console.log(data)
   })
-  res.writeHead(301, {
-    Location: '/success' // go to success after POSTing
+
+  // Try to send email
+  transporter.sendMail(mailOptions, (error, response) => {
+    error ? console.log(error) : console.log(response)
   })
-  try {
-    res.send()
-  } catch (err) {
-    console.log(`Caught an error during res.send(): ${err}`)
-  }
+  transporter.close()
+
+  // Redirect to /success page after sending mail then .end() response
+  response.writeHead(301, { Location: '/success' })
+  response.end()
 })
 
 module.exports = mailer
