@@ -44,7 +44,7 @@
       <v-toolbar-title v-text="title" />
       <v-spacer />
       <!-- <input id="switch" @click="childSwitch"><label for="switch">Toggle</label> -->
-      <!--  <v-btn
+      <!-- <v-btn
         icon
         @click="childSwitch"
       >
@@ -93,13 +93,12 @@ export default {
           title: 'Yang',
           icon: 'bubble_chart',
           to: '/yang'
+        },
+        {
+          title: 'mailer',
+          icon: 'mail',
+          to: '/mailer'
         }
-
-        // {
-        //   title: 'mailer',
-        //   icon: 'mail',
-        //   to: '/mailer'
-        // }
       ],
       title: 'omaraziz',
       toolbar: {
