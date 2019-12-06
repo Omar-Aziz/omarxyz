@@ -5,7 +5,7 @@
       <h1>Omar Aziz</h1>
       <h2>software developer</h2>
       <h2>former infant</h2>
-      <h3>click on the top left to explore this site</h3>
+      <!-- <h3>click on the top left to explore this site</h3> -->
       <br>
       <v-divider />
       <v-flex justify="center">

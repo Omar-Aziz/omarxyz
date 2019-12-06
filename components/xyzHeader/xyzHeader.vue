@@ -79,11 +79,11 @@ export default {
           to: '/',
           tooltip: 'huh'
         },
-        {
-          title: 'Projects',
-          icon: 'apps',
-          to: '/projects'
-        },
+        // {
+        //   title: 'Projects',
+        //   icon: 'apps',
+        //   to: '/projects'
+        // },
         {
           title: 'portfolio',
           icon: 'folder_open',
