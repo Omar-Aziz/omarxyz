@@ -53,7 +53,7 @@ module.exports = {
   loading: { color: '#2045' },
 
   /**
-   * ru-cache to allow cached components for better render performances
+   * re-cache to allow cached components for better render performances
    */
   cache: { max: 1000, maxAge: 900000 },
 
