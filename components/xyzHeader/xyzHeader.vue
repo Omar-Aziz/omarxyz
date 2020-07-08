@@ -89,11 +89,11 @@ export default {
           icon: 'folder_open',
           to: '/profile/thesis'
         },
-        {
-          title: 'Yang',
-          icon: 'bubble_chart',
-          to: '/yang'
-        },
+        // {
+        //   title: 'Yang',
+        //   icon: 'bubble_chart',
+        //   to: '/yang'
+        // },
         {
           title: 'mailer',
           icon: 'mail',
