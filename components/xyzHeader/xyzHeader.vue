@@ -12,7 +12,7 @@
         <v-list>
           <v-list-tile class="list-tile" avatar>
             <v-list-tile-avatar>
-              <v-img :src="toolbar.img" />
+              <!-- <v-img :src="toolbar.img" /> -->
             </v-list-tile-avatar>
             <v-list-tile-content>
               <v-list-tile-title>{{ toolbar.title }}</v-list-tile-title>

@@ -4,8 +4,6 @@
       <v-flex xs12 sm10 md10 lg10 xl7>
         <v-card id="" text-xs-center>
           <h2>Graduation Thesis</h2>
-        </v-card><br>
-        <v-card id="" text-xs-center>
           <h2 v-text="topic" />
         </v-card>
       </v-flex>
@@ -121,9 +119,6 @@ export default {
       return false
     }
   }
-  // mounted () {
-  //   console.log(this.$vuetify.breakpoint)
-  // }
 }
 </script>
 

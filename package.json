@@ -22,7 +22,7 @@
     "googleapis": "^45.0.0",
     "multer": "^1.4.2",
     "nodemailer": "^6.3.0",
-    "nuxt": "^2.0.0",
+    "nuxt": "^2.13.3",
     "vuetify-loader": "^1.2.2"
   },
   "devDependencies": {
