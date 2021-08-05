@@ -1,5 +1,5 @@
 
-# [:link:omarxyz.herokuapp.com]https://omarxyz.herokuapp.com/)
+# [:link:omarxyz.herokuapp.com]
 
 
 
